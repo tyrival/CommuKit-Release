@@ -1,0 +1,485 @@
+const en = {
+  nav: { features: 'Features', download: 'Download' },
+  hero: {
+    badge: 'Connect. Parse. Transform.',
+    title1: 'Developer\'s Network Communication Workbench',
+    subtitle: 'A multi-protocol network debugging tool with a programmable message pipeline, protocol analyzer, and industrial IoT protocol support.',
+    download: 'Free Download',
+    learn: 'Learn More',
+    note: 'Requires macOS 14+ · Free',
+  },
+  features: {
+    protocols: {
+      title: 'Multi-Protocol Connection',
+      subtitle: 'TCP, UDP, MQTT, WebSocket — all in one unified client',
+      desc: 'Connect to any endpoint with native protocol support. TCP/UDP via Network framework, MQTT with full session control (QoS, keep-alive, auto-subscribe), WebSocket with custom headers and SSL. Supports UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS encodings.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-Encoding'],
+    },
+    pipeline: {
+      title: 'Programmable Message Parser',
+      subtitle: '7 handler types for structured message parsing with JavaScript scripting',
+      desc: 'A visual message parser with Parse, Filter, Compute, Compose, Algorithm, Mapping, and Script handlers. Extract values from hex/JSON/XML/string, filter by conditions, compute with JavaScript expressions, and transform into structured output — all with step-by-step debug logs and intermediate data snapshots.',
+      tags: ['7 Handler Types', 'JavaScript Scripting', 'Hex / JSON / XML / String', 'Step Debugging'],
+    },
+    analyzer: {
+      title: 'Protocol Analyzer',
+      subtitle: 'Auto-detect and dissect MODBUS RTU/TCP and DL/T 645 frames',
+      desc: 'Point it at raw hex and get structured field breakdowns: slave address, function code, register values, CRC-16 verification. Supports signed/unsigned int, BCD, and IEEE 754 float interpretations. Built-in MODBUS frame construction for read/write operations.',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Field Dissection', 'Frame Construction'],
+    },
+    tools: {
+      title: 'Network Tool Suite',
+      subtitle: '7 essential tools: Ping, Port Scanner, Whois, DNS, SSL, Telnet, IP Query',
+      desc: 'All the network utilities you need in one place. ICMP Ping, TCP port range scanning with progress, WHOIS domain lookup, DNS forward/reverse queries, TLS certificate inspection, interactive Telnet sessions, and IP geolocation. Tools are reorderable via drag-and-drop.',
+      tags: ['Ping & Port Scanner', 'Whois & DNS', 'SSL Certificate', 'Telnet & IP Query'],
+    },
+    workspace: {
+      title: 'Session & Workspace Management',
+      subtitle: 'Organize connections into groups with custom icons, colors, and multiple sessions',
+      desc: 'Group connections by project or environment. Each connection can spawn multiple independent sessions (e.g., different MQTT credentials). Drag-and-drop reorder for connections, groups, and tabs. Full state persistence across app restarts.',
+      tags: ['Connection Groups', 'Multi-Session', 'Drag & Drop', 'State Persistence'],
+    },
+    utilities: {
+      title: 'Data Processing Utilities',
+      subtitle: 'Checksum, compression, encryption, and byte conversion built in',
+      desc: 'CRC-16, Checksum, LRC calculation. GZIP, Deflate, Zlib compression. Base64 and AES (ECB/CBC, 128/256-bit) encryption. Hex-to-data and data-to-hex conversion. Plus a dedicated message editor with monospace font accessible from any session.',
+      tags: ['CRC & Checksum', 'GZIP / Deflate / Zlib', 'AES Encryption', 'Hex Conversion'],
+    },
+  },
+  painMatrix: {
+    heading: 'Pain Points & Solutions',
+    title: '6 Pain Points',
+    titleHighlight: 'One Solution',
+    solution: 'CommuKit',
+    items: [
+      { pain: 'Tool Fragmentation', painDesc: 'TCP client, MQTT client, WebSocket client, hex parser, checksum calculator, ping tool — each is a separate app or command-line tool.', solution: 'All-in-One Workbench', solnDesc: 'One app for all protocols and tools. Switch between TCP, MQTT, WebSocket, and 7 network utilities without leaving the workspace.' },
+      { pain: 'Manual Hex Parsing', painDesc: 'Raw hex response from industrial devices requires manual byte counting, offset calculation, and value conversion every time.', solution: 'Visual Pipeline Editor', solnDesc: 'Define parse rules once. The pipeline extracts, transforms, and maps values automatically. Debug with step-by-step data snapshots.' },
+      { pain: 'No Protocol Awareness', painDesc: 'Generic hex tools don\'t understand MODBUS or DL/T 645 frames. You have to manually decode function codes and calculate CRCs.', solution: 'Built-in Protocol Analyzer', solnDesc: 'Auto-detect protocol type. Structured field breakdown with value interpretation. Built-in MODBUS frame construction for read/write commands.' },
+      { pain: 'Scattered Utilities', painDesc: 'Ping, port scan, DNS lookup, SSL check — each requires a terminal window or different website. Context switching is constant.', solution: 'Integrated Tool Suite', solnDesc: '7 network tools in the sidebar. Reorder via drag-and-drop. Results stay visible while you work on connections.' },
+      { pain: 'Lost Connection State', painDesc: 'Close a tab and lose the session. Restart the app and reconfigure every connection from scratch. No persistence across sessions.', solution: 'Full Workspace Persistence', solnDesc: 'Groups, connections, sessions, favorites, and pipeline configs all persist. Smart backup with hourly/daily/weekly retention.' },
+      { pain: 'Encoding Headaches', painDesc: 'Industrial devices use GB2312, Shift-JIS, Big5 — most tools only support UTF-8, making non-ASCII payloads unreadable.', solution: '8 Encoding Support', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Switch encoding per connection. See the bytes as intended.' },
+    ],
+  },
+  cta: { title: 'Start Building with CommuKit', desc: 'Free. No ads. Native macOS experience. Requires macOS 14+.', download: 'Download for macOS' },
+  footer: { changelog: 'Changelog', download: 'Download' },
+}
+
+const zh: typeof en = {
+  nav: { features: '特性', download: '下载' },
+  hero: {
+    badge: '连接 · 解析 · 转换',
+    title1: '开发者网络通讯工作台',
+    subtitle: '多协议网络调试工具，内置可编程消息管线、协议解析器及工业物联网协议支持。',
+    download: '免费下载',
+    learn: '了解特性',
+    note: '要求 macOS 14+ · 完全免费',
+  },
+  features: {
+    protocols: {
+      title: '多协议连接',
+      subtitle: 'TCP、UDP、MQTT、WebSocket — 一站式统一客户端',
+      desc: '通过原生协议支持连接任意终端。TCP/UDP 基于 Network 框架，MQTT 支持完整会话控制（QoS、Keep-Alive、自动订阅），WebSocket 支持自定义 Headers 与 SSL。支持 UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS 编码。',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', '多编码支持'],
+    },
+    pipeline: {
+      title: '可编程消息解析器',
+      subtitle: '7 种处理器，结构化消息解析 + JavaScript 脚本支持',
+      desc: '可视化消息解析器，内置 Parse、Filter、Compute、Compose、Algorithm、Mapping、Script 七种处理器。支持从 hex/JSON/XML/字符串中提取数据、条件过滤、JavaScript 表达式计算、输出结构化转换，提供逐步调试日志与中间数据快照。',
+      tags: ['7 种处理器', 'JavaScript 脚本', 'Hex / JSON / XML / 字符串', '逐步调试'],
+    },
+    analyzer: {
+      title: '协议解析器',
+      subtitle: '自动识别并解析 MODBUS RTU/TCP 与 DL/T 645 报文',
+      desc: '输入原始 hex 即可获得结构化字段解析：从站地址、功能码、寄存器值、CRC-16 校验。支持有符号/无符号整数、BCD 码与 IEEE 754 浮点数解读。内置 MODBUS 读写帧构造功能。',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', '字段解析', '帧构造'],
+    },
+    tools: {
+      title: '网络工具集',
+      subtitle: '7 合 1：Ping、端口扫描、Whois、DNS、SSL、Telnet、IP 查询',
+      desc: '全部网络工具一站配齐。ICMP Ping、TCP 端口范围扫描（带进度）、WHOIS 域名查询、DNS 正反向解析、TLS 证书检查、交互式 Telnet 会话、IP 归属地查询。工具支持拖拽排序。',
+      tags: ['Ping & 端口扫描', 'Whois & DNS', 'SSL 证书', 'Telnet & IP 查询'],
+    },
+    workspace: {
+      title: '会话与工作区管理',
+      subtitle: '连接分组管理，自定义图标颜色，支持多会话并行',
+      desc: '按项目或环境对连接进行分组。每个连接可派生多个独立会话（如不同 MQTT 凭证）。连接、分组、标签页均支持拖拽排序。应用重启后完整保留所有状态。',
+      tags: ['连接分组', '多会话', '拖拽排序', '状态持久化'],
+    },
+    utilities: {
+      title: '数据处理工具',
+      subtitle: '内置校验、压缩、加密、进制转换功能',
+      desc: 'CRC-16、Checksum、LRC 计算。GZIP、Deflate、Zlib 压缩。Base64 及 AES（ECB/CBC、128/256 位）加解密。Hex 与 Data 互转。配专属等宽字体消息编辑器，可从任意会话调起。',
+      tags: ['CRC & 校验和', 'GZIP / Deflate / Zlib', 'AES 加密', '进制转换'],
+    },
+  },
+  painMatrix: {
+    heading: '痛点与方案',
+    title: '6 个痛点',
+    titleHighlight: '一个方案',
+    solution: 'CommuKit',
+    items: [
+      { pain: '工具碎片化', painDesc: 'TCP 客户端、MQTT 客户端、WebSocket 客户端、Hex 解析器、校验计算器、Ping 工具——各自独立，来回切换。', solution: '一站式工作台', solnDesc: '一个 App 覆盖所有协议与工具。在 TCP、MQTT、WebSocket 与 7 种网络工具之间无缝切换，无需离开工作区。' },
+      { pain: '手动 Hex 解析', painDesc: '工业设备返回的原始 hex 报文，每次都要手动数字节、算偏移、转换数值，耗时且易出错。', solution: '可视化管线编辑器', solnDesc: '一次定义解析规则，管线自动提取、转换、映射数值。逐步数据快照让调试一目了然。' },
+      { pain: '缺乏协议感知', painDesc: '通用 hex 工具不理解 MODBUS 或 DL/T 645 报文结构，只能手动解码功能码并计算 CRC。', solution: '内置协议解析器', solnDesc: '自动识别协议类型。字段结构化解析并给出数值解读。内置 MODBUS 帧构造，直接生成读写命令帧。' },
+      { pain: '工具散落各处', painDesc: 'Ping、端口扫描、DNS 查询、SSL 检查——每个都要开终端或不同网页，上下文频繁切换。', solution: '集成工具套件', solnDesc: '侧边栏内置 7 种网络工具。支持拖拽排序。查询结果常驻显示，不影响连接调试工作。' },
+      { pain: '连接状态丢失', painDesc: '关闭标签页即丢失会话。重启应用后所有连接配置需手动重新搭建，没有持久化。', solution: '完整工作区持久化', solnDesc: '分组、连接、会话、收藏夹、管线配置全部持久保存。智能备份策略：每小时/每天/每周自动保留。' },
+      { pain: '编码困扰', painDesc: '工业设备使用 GB2312、Shift-JIS、Big5 编码，大多数工具仅支持 UTF-8，非 ASCII 报文显示乱码。', solution: '8 种编码支持', solnDesc: 'UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS。每个连接独立切换编码，报文以正确字符集显示。' },
+    ],
+  },
+  cta: { title: '开始使用 CommuKit 构建', desc: '免费、无广告、Apple 原生体验。支持 macOS 14+。', download: '下载 macOS 版' },
+  footer: { changelog: '更新日志', download: '下载' },
+}
+
+const ja: typeof en = {
+  nav: { features: '機能', download: 'ダウンロード' },
+  hero: {
+    badge: '接続 · 解析 · 変換',
+    title1: '開発者のためのネットワーク通信ワークベンチ',
+    subtitle: 'マルチプロトコルネットワークデバッグツール。プログラマブルなメッセージパイプライン、プロトコルアナライザ、産業用IoTプロトコルをサポート。',
+    download: '無料ダウンロード',
+    learn: '詳細を見る',
+    note: 'macOS 14+ 対応 · 完全無料',
+  },
+  features: {
+    protocols: {
+      title: 'マルチプロトコル接続',
+      subtitle: 'TCP、UDP、MQTT、WebSocket — すべてを1つのクライアントで',
+      desc: 'ネイティブプロトコルサポートで任意のエンドポイントに接続。NetworkフレームワークによるTCP/UDP、完全なセッション制御（QoS、キープアライブ、自動サブスクライブ）を備えたMQTT、カスタムヘッダーとSSL対応のWebSocket。UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JISエンコーディング対応。',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'マルチエンコーディング'],
+    },
+    pipeline: {
+      title: 'プログラマブルメッセージパーサー',
+      subtitle: '7種類のハンドラとJavaScriptスクリプトによる構造化メッセージ解析',
+      desc: 'Parse、Filter、Compute、Compose、Algorithm、Mapping、Scriptの7種類のハンドラを備えたビジュアルメッセージパーサー。hex/JSON/XML/文字列から値を抽出し、条件でフィルタし、JavaScript式で計算し、構造化された出力に変換します。ステップバイステップのデバッグログと中間データスナップショット付き。',
+      tags: ['7種類のハンドラ', 'JavaScriptスクリプト', 'Hex / JSON / XML / 文字列', 'ステップデバッグ'],
+    },
+    analyzer: {
+      title: 'プロトコルアナライザ',
+      subtitle: 'MODBUS RTU/TCPおよびDL/T 645フレームの自動検出と解析',
+      desc: '生のhexを入力するだけで構造化されたフィールド解析が得られます：スレーブアドレス、ファンクションコード、レジスタ値、CRC-16検証。符号付き/符号なし整数、BCD、IEEE 754 float解釈に対応。読み取り/書き込み操作用のMODBUSフレーム構築機能を内蔵。',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', 'フィールド解析', 'フレーム構築'],
+    },
+    tools: {
+      title: 'ネットワークツールスイート',
+      subtitle: '7つの必須ツール：Ping、ポートスキャナ、Whois、DNS、SSL、Telnet、IPクエリ',
+      desc: '必要なネットワークユーティリティをすべて1箇所に。ICMP Ping、進捗表示付きTCPポート範囲スキャン、WHOISドメイン検索、DNS正引き/逆引きクエリ、TLS証明書検査、インタラクティブTelnetセッション、IP位置情報。ツールはドラッグ＆ドロップで並べ替え可能。',
+      tags: ['Ping & ポートスキャナ', 'Whois & DNS', 'SSL証明書', 'Telnet & IPクエリ'],
+    },
+    workspace: {
+      title: 'セッションとワークスペース管理',
+      subtitle: 'カスタムアイコン、カラー、複数セッションで接続をグループ化',
+      desc: 'プロジェクトや環境ごとに接続をグループ化。各接続は複数の独立したセッション（例：異なるMQTT認証情報）を生成可能。接続、グループ、タブのドラッグ＆ドロップによる並べ替え。アプリ再起動後も完全な状態を保持。',
+      tags: ['接続グループ', 'マルチセッション', 'ドラッグ＆ドロップ', '状態永続化'],
+    },
+    utilities: {
+      title: 'データ処理ユーティリティ',
+      subtitle: 'チェックサム、圧縮、暗号化、バイト変換を内蔵',
+      desc: 'CRC-16、チェックサム、LRC計算。GZIP、Deflate、Zlib圧縮。Base64およびAES（ECB/CBC、128/256ビット）暗号化。Hex-データ相互変換。さらに、任意のセッションからアクセス可能な等幅フォントの専用メッセージエディタ付き。',
+      tags: ['CRC & チェックサム', 'GZIP / Deflate / Zlib', 'AES暗号化', 'Hex変換'],
+    },
+  },
+  painMatrix: {
+    heading: '課題と解決策',
+    title: '6つの課題',
+    titleHighlight: '1つの解決策',
+    solution: 'CommuKit',
+    items: [
+      { pain: 'ツールの断片化', painDesc: 'TCPクライアント、MQTTクライアント、WebSocketクライアント、Hexパーサー、チェックサム計算機、Pingツール — それぞれが別のアプリやコマンドラインツール。', solution: 'オールインワンワークベンチ', solnDesc: '1つのアプリですべてのプロトコルとツールに対応。ワークスペースを離れることなくTCP、MQTT、WebSocket、7つのネットワークユーティリティを切り替え。' },
+      { pain: '手動Hex解析', painDesc: '産業用デバイスからの生のhex応答は、毎回手動でバイトカウント、オフセット計算、値変換が必要。', solution: 'ビジュアルパイプラインエディタ', solnDesc: '解析ルールを一度定義すれば、パイプラインが自動的に値を抽出・変換・マッピング。ステップバイステップのデータスナップショットでデバッグ。' },
+      { pain: 'プロトコル非対応', painDesc: '汎用hexツールはMODBUSやDL/T 645フレームを理解せず、手動でファンクションコードを解読しCRCを計算する必要がある。', solution: '内蔵プロトコルアナライザ', solnDesc: 'プロトコルタイプを自動検出。値解釈付きの構造化フィールド解析。読み取り/書き込みコマンド用のMODBUSフレーム構築機能内蔵。' },
+      { pain: '散在するユーティリティ', painDesc: 'Ping、ポートスキャン、DNS検索、SSLチェック — それぞれにターミナルや別のウェブサイトが必要。常にコンテキストスイッチが発生。', solution: '統合ツールスイート', solnDesc: 'サイドバーに7つのネットワークツールを統合。ドラッグ＆ドロップで並べ替え。接続作業中も結果が表示されたまま。' },
+      { pain: '接続状態の喪失', painDesc: 'タブを閉じるとセッションが失われる。アプリを再起動するとすべての接続設定を一から再構成。セッション間の永続性なし。', solution: '完全なワークスペース永続化', solnDesc: 'グループ、接続、セッション、お気に入り、パイプライン設定すべてが永続化。毎時/毎日/毎週のスマートバックアップ保持。' },
+      { pain: 'エンコーディングの悩み', painDesc: '産業用デバイスはGB2312、Shift-JIS、Big5を使用するが、ほとんどのツールはUTF-8のみ対応で非ASCIIペイロードが文字化け。', solution: '8種類のエンコーディング対応', solnDesc: 'UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS。接続ごとにエンコーディングを切り替え。意図した文字セットでバイトを表示。' },
+    ],
+  },
+  cta: { title: 'CommuKitで構築を始めましょう', desc: '無料・広告なし・Appleネイティブ体験。macOS 14+対応。', download: 'macOS版をダウンロード' },
+  footer: { changelog: '変更履歴', download: 'ダウンロード' },
+}
+
+const ko: typeof en = {
+  nav: { features: '기능', download: '다운로드' },
+  hero: {
+    badge: '연결 · 파싱 · 변환',
+    title1: '개발자를 위한 네트워크 통신 워크벤치',
+    subtitle: '프로그래머블 메시지 파이프라인, 프로토콜 분석기, 산업용 IoT 프로토콜 지원을 갖춘 멀티 프로토콜 네트워크 디버깅 도구.',
+    download: '무료 다운로드',
+    learn: '자세히 보기',
+    note: 'macOS 14+ 필요 · 완전 무료',
+  },
+  features: {
+    protocols: {
+      title: '멀티 프로토콜 연결',
+      subtitle: 'TCP, UDP, MQTT, WebSocket — 하나의 통합 클라이언트에서',
+      desc: '네이티브 프로토콜 지원으로 모든 엔드포인트에 연결. Network 프레임워크 기반 TCP/UDP, 전체 세션 제어(QoS, Keep-Alive, 자동 구독)가 가능한 MQTT, 사용자 정의 헤더와 SSL을 지원하는 WebSocket. UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS 인코딩 지원.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', '멀티 인코딩'],
+    },
+    pipeline: {
+      title: '프로그래머블 메시지 파서',
+      subtitle: '7가지 핸들러 타입과 JavaScript 스크립팅으로 구조화된 메시지 파싱',
+      desc: 'Parse, Filter, Compute, Compose, Algorithm, Mapping, Script의 7가지 핸들러를 갖춘 비주얼 메시지 파서. hex/JSON/XML/문자열에서 값을 추출하고, 조건으로 필터링하며, JavaScript 표현식으로 계산하고, 구조화된 출력으로 변환합니다. 단계별 디버그 로그와 중간 데이터 스냅샷을 제공합니다.',
+      tags: ['7가지 핸들러', 'JavaScript 스크립팅', 'Hex / JSON / XML / 문자열', '단계별 디버깅'],
+    },
+    analyzer: {
+      title: '프로토콜 분석기',
+      subtitle: 'MODBUS RTU/TCP 및 DL/T 645 프레임 자동 감지 및 분석',
+      desc: '원시 hex를 입력하면 구조화된 필드 분석을 얻을 수 있습니다: 슬레이브 주소, 기능 코드, 레지스터 값, CRC-16 검증. 부호 있는/없는 정수, BCD, IEEE 754 부동소수점 해석을 지원합니다. 읽기/쓰기 작업을 위한 MODBUS 프레임 구성 기능 내장.',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', '필드 분석', '프레임 구성'],
+    },
+    tools: {
+      title: '네트워크 도구 모음',
+      subtitle: '7가지 필수 도구: Ping, 포트 스캐너, Whois, DNS, SSL, Telnet, IP 조회',
+      desc: '필요한 모든 네트워크 유틸리티를 한 곳에. ICMP Ping, 진행률 표시가 있는 TCP 포트 범위 스캔, WHOIS 도메인 조회, DNS 정방향/역방향 쿼리, TLS 인증서 검사, 대화형 Telnet 세션, IP 위치 정보. 도구는 드래그 앤 드롭으로 재정렬 가능.',
+      tags: ['Ping & 포트 스캐너', 'Whois & DNS', 'SSL 인증서', 'Telnet & IP 조회'],
+    },
+    workspace: {
+      title: '세션 및 워크스페이스 관리',
+      subtitle: '사용자 정의 아이콘, 색상, 여러 세션으로 연결 그룹화',
+      desc: '프로젝트나 환경별로 연결을 그룹화. 각 연결은 여러 독립 세션(예: 다른 MQTT 자격 증명)을 생성할 수 있음. 연결, 그룹, 탭의 드래그 앤 드롭 재정렬. 앱 재시작 후에도 완전한 상태 유지.',
+      tags: ['연결 그룹', '멀티 세션', '드래그 앤 드롭', '상태 지속성'],
+    },
+    utilities: {
+      title: '데이터 처리 유틸리티',
+      subtitle: '체크섬, 압축, 암호화, 바이트 변환 내장',
+      desc: 'CRC-16, 체크섬, LRC 계산. GZIP, Deflate, Zlib 압축. Base64 및 AES(ECB/CBC, 128/256비트) 암호화. Hex-데이터 상호 변환. 모든 세션에서 접근 가능한 고정폭 글꼴 전용 메시지 편집기 제공.',
+      tags: ['CRC & 체크섬', 'GZIP / Deflate / Zlib', 'AES 암호화', 'Hex 변환'],
+    },
+  },
+  painMatrix: {
+    heading: '문제점 및 해결책',
+    title: '6가지 문제점',
+    titleHighlight: '하나의 해결책',
+    solution: 'CommuKit',
+    items: [
+      { pain: '도구 파편화', painDesc: 'TCP 클라이언트, MQTT 클라이언트, WebSocket 클라이언트, Hex 파서, 체크섬 계산기, Ping 도구 — 각각이 별도의 앱이나 명령줄 도구.', solution: '올인원 워크벤치', solnDesc: '하나의 앱에서 모든 프로토콜과 도구를 사용. 워크스페이스를 떠나지 않고 TCP, MQTT, WebSocket, 7가지 네트워크 유틸리티 간 전환.' },
+      { pain: '수동 Hex 파싱', painDesc: '산업용 장치의 원시 hex 응답은 매번 수동으로 바이트 계산, 오프셋 계산, 값 변환이 필요.', solution: '비주얼 파이프라인 편집기', solnDesc: '파싱 규칙을 한 번 정의하면 파이프라인이 자동으로 값을 추출, 변환, 매핑. 단계별 데이터 스냅샷으로 디버깅.' },
+      { pain: '프로토콜 인식 부족', painDesc: '범용 hex 도구는 MODBUS나 DL/T 645 프레임을 이해하지 못해 수동으로 기능 코드를 해독하고 CRC를 계산해야 함.', solution: '내장 프로토콜 분석기', solnDesc: '프로토콜 유형 자동 감지. 값 해석이 포함된 구조화된 필드 분석. 읽기/쓰기 명령용 MODBUS 프레임 구성 내장.' },
+      { pain: '산재된 유틸리티', painDesc: 'Ping, 포트 스캔, DNS 조회, SSL 확인 — 각각 터미널이나 다른 웹사이트가 필요. 지속적인 컨텍스트 전환 발생.', solution: '통합 도구 모음', solnDesc: '사이드바에 7가지 네트워크 도구 통합. 드래그 앤 드롭으로 재정렬. 연결 작업 중에도 결과가 계속 표시됨.' },
+      { pain: '연결 상태 손실', painDesc: '탭을 닫으면 세션이 손실됨. 앱을 재시작하면 모든 연결 설정을 처음부터 다시 구성해야 함. 세션 간 지속성 없음.', solution: '완전한 워크스페이스 지속성', solnDesc: '그룹, 연결, 세션, 즐겨찾기, 파이프라인 설정이 모두 지속됨. 매시간/매일/매주 스마트 백업 유지.' },
+      { pain: '인코딩 문제', painDesc: '산업용 장치는 GB2312, Shift-JIS, Big5를 사용하지만 대부분의 도구는 UTF-8만 지원하여 비ASCII 페이로드가 깨져 보임.', solution: '8가지 인코딩 지원', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. 연결별로 인코딩 전환. 의도한 문자 세트로 바이트를 표시.' },
+    ],
+  },
+  cta: { title: 'CommuKit으로 구축 시작하기', desc: '무료. 광고 없음. Apple 네이티브 경험. macOS 14+ 필요.', download: 'macOS용 다운로드' },
+  footer: { changelog: '변경 로그', download: '다운로드' },
+}
+
+const de: typeof en = {
+  nav: { features: 'Funktionen', download: 'Download' },
+  hero: {
+    badge: 'Verbinden · Parsen · Transformieren',
+    title1: 'Netzwerk-Kommunikations-Workbench für Entwickler',
+    subtitle: 'Ein Multi-Protokoll-Netzwerk-Debugging-Tool mit programmierbarer Nachrichten-Pipeline, Protokollanalysator und industrieller IoT-Protokollunterstützung.',
+    download: 'Kostenloser Download',
+    learn: 'Mehr erfahren',
+    note: 'Erfordert macOS 14+ · Kostenlos',
+  },
+  features: {
+    protocols: {
+      title: 'Multi-Protokoll-Verbindung',
+      subtitle: 'TCP, UDP, MQTT, WebSocket — alles in einem einheitlichen Client',
+      desc: 'Verbinden Sie sich mit nativer Protokollunterstützung mit beliebigen Endpunkten. TCP/UDP über das Network-Framework, MQTT mit vollständiger Sitzungssteuerung (QoS, Keep-Alive, Auto-Abonnement), WebSocket mit benutzerdefinierten Headern und SSL. Unterstützt UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-Encoding'],
+    },
+    pipeline: {
+      title: 'Programmierbarer Nachrichten-Parser',
+      subtitle: '7 Handler-Typen für strukturierte Nachrichtenanalyse mit JavaScript-Scripting',
+      desc: 'Ein visueller Nachrichten-Parser mit Parse-, Filter-, Compute-, Compose-, Algorithm-, Mapping- und Script-Handlern. Extrahieren Sie Werte aus Hex/JSON/XML/Zeichenketten, filtern Sie nach Bedingungen, berechnen Sie mit JavaScript-Ausdrücken und transformieren Sie in strukturierte Ausgabe — alles mit schrittweisen Debug-Logs und Zwischen-Datenschnappschüssen.',
+      tags: ['7 Handler-Typen', 'JavaScript-Scripting', 'Hex / JSON / XML / String', 'Schritt-Debugging'],
+    },
+    analyzer: {
+      title: 'Protokollanalysator',
+      subtitle: 'Automatische Erkennung und Analyse von MODBUS RTU/TCP und DL/T 645 Frames',
+      desc: 'Geben Sie rohes Hex ein und erhalten Sie strukturierte Feldanalysen: Slave-Adresse, Funktionscode, Registerwerte, CRC-16-Überprüfung. Unterstützt vorzeichenbehaftete/vorzeichenlose Ganzzahlen, BCD und IEEE 754 Float-Interpretationen. Integrierte MODBUS-Frame-Konstruktion für Lese-/Schreiboperationen.',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Feldanalyse', 'Frame-Konstruktion'],
+    },
+    tools: {
+      title: 'Netzwerk-Tool-Suite',
+      subtitle: '7 essentielle Tools: Ping, Port-Scanner, Whois, DNS, SSL, Telnet, IP-Abfrage',
+      desc: 'Alle benötigten Netzwerk-Dienstprogramme an einem Ort. ICMP-Ping, TCP-Portbereich-Scan mit Fortschrittsanzeige, WHOIS-Domain-Abfrage, DNS-Vorwärts-/Rückwärtsabfragen, TLS-Zertifikatprüfung, interaktive Telnet-Sitzungen und IP-Geolokalisierung. Tools sind per Drag-and-Drop umsortierbar.',
+      tags: ['Ping & Port-Scanner', 'Whois & DNS', 'SSL-Zertifikat', 'Telnet & IP-Abfrage'],
+    },
+    workspace: {
+      title: 'Sitzungs- und Arbeitsbereichsverwaltung',
+      subtitle: 'Verbindungen in Gruppen mit benutzerdefinierten Icons, Farben und mehreren Sitzungen organisieren',
+      desc: 'Gruppieren Sie Verbindungen nach Projekt oder Umgebung. Jede Verbindung kann mehrere unabhängige Sitzungen erzeugen (z. B. verschiedene MQTT-Anmeldeinformationen). Drag-and-Drop-Neusortierung für Verbindungen, Gruppen und Tabs. Vollständige Zustandspersistenz über App-Neustarts hinweg.',
+      tags: ['Verbindungsgruppen', 'Multi-Session', 'Drag & Drop', 'Zustandspersistenz'],
+    },
+    utilities: {
+      title: 'Datenverarbeitungs-Dienstprogramme',
+      subtitle: 'Prüfsumme, Kompression, Verschlüsselung und Byte-Konvertierung integriert',
+      desc: 'CRC-16, Prüfsumme, LRC-Berechnung. GZIP-, Deflate-, Zlib-Kompression. Base64- und AES-Verschlüsselung (ECB/CBC, 128/256-Bit). Hex-zu-Daten- und Daten-zu-Hex-Konvertierung. Plus ein dedizierter Nachrichten-Editor mit Monospace-Schriftart, zugänglich von jeder Sitzung aus.',
+      tags: ['CRC & Prüfsumme', 'GZIP / Deflate / Zlib', 'AES-Verschlüsselung', 'Hex-Konvertierung'],
+    },
+  },
+  painMatrix: {
+    heading: 'Probleme & Lösungen',
+    title: '6 Probleme',
+    titleHighlight: 'Eine Lösung',
+    solution: 'CommuKit',
+    items: [
+      { pain: 'Tool-Fragmentierung', painDesc: 'TCP-Client, MQTT-Client, WebSocket-Client, Hex-Parser, Prüfsummenrechner, Ping-Tool — jedes eine separate App oder ein Kommandozeilen-Tool.', solution: 'All-in-One-Workbench', solnDesc: 'Eine App für alle Protokolle und Tools. Wechseln Sie zwischen TCP, MQTT, WebSocket und 7 Netzwerk-Dienstprogrammen, ohne den Arbeitsbereich zu verlassen.' },
+      { pain: 'Manuelles Hex-Parsen', painDesc: 'Rohe Hex-Antworten von Industrie-Geräten erfordern jedes Mal manuelles Byte-Zählen, Offset-Berechnung und Wert-Konvertierung.', solution: 'Visueller Pipeline-Editor', solnDesc: 'Einmal Parsing-Regeln definieren. Die Pipeline extrahiert, transformiert und mappt Werte automatisch. Debuggen mit schrittweisen Datenschnappschüssen.' },
+      { pain: 'Keine Protokoll-Erkennung', painDesc: 'Generische Hex-Tools verstehen keine MODBUS- oder DL/T 645-Frames. Man muss Funktionscodes manuell dekodieren und CRCs berechnen.', solution: 'Integrierter Protokollanalysator', solnDesc: 'Automatische Protokollerkennung. Strukturierte Feldanalyse mit Wertinterpretation. Integrierte MODBUS-Frame-Konstruktion für Lese-/Schreibbefehle.' },
+      { pain: 'Verstreute Dienstprogramme', painDesc: 'Ping, Port-Scan, DNS-Abfrage, SSL-Prüfung — jedes erfordert ein Terminal-Fenster oder eine andere Website. Ständiger Kontextwechsel.', solution: 'Integrierte Tool-Suite', solnDesc: '7 Netzwerk-Tools in der Seitenleiste. Neuordnung per Drag-and-Drop. Ergebnisse bleiben sichtbar, während Sie an Verbindungen arbeiten.' },
+      { pain: 'Verlorener Verbindungszustand', painDesc: 'Tab schließen und die Sitzung ist weg. App neustarten und jede Verbindung von Grund auf neu konfigurieren. Keine Persistenz über Sitzungen hinweg.', solution: 'Vollständige Arbeitsbereich-Persistenz', solnDesc: 'Gruppen, Verbindungen, Sitzungen, Favoriten und Pipeline-Konfigurationen bleiben alle erhalten. Intelligente Sicherung mit stündlicher/täglicher/wöchentlicher Aufbewahrung.' },
+      { pain: 'Encoding-Probleme', painDesc: 'Industriegeräte verwenden GB2312, Shift-JIS, Big5 — die meisten Tools unterstützen nur UTF-8, wodurch Nicht-ASCII-Nutzdaten unlesbar werden.', solution: '8 Encoding-Unterstützung', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Encoding pro Verbindung umschalten. Die Bytes so sehen, wie sie gemeint sind.' },
+    ],
+  },
+  cta: { title: 'Starten Sie mit CommuKit', desc: 'Kostenlos. Keine Werbung. Native Apple-Erfahrung. Erfordert macOS 14+.', download: 'Für macOS herunterladen' },
+  footer: { changelog: 'Änderungsprotokoll', download: 'Download' },
+}
+
+const fr: typeof en = {
+  nav: { features: 'Fonctionnalités', download: 'Télécharger' },
+  hero: {
+    badge: 'Connecter · Parser · Transformer',
+    title1: 'Workbench de communication réseau pour développeurs',
+    subtitle: 'Un outil de débogage réseau multi-protocole avec un pipeline de messages programmable, un analyseur de protocole et le support des protocoles IoT industriels.',
+    download: 'Téléchargement gratuit',
+    learn: 'En savoir plus',
+    note: 'Nécessite macOS 14+ · Gratuit',
+  },
+  features: {
+    protocols: {
+      title: 'Connexion multi-protocole',
+      subtitle: 'TCP, UDP, MQTT, WebSocket — tout dans un client unifié',
+      desc: 'Connectez-vous à n\'importe quel point de terminaison avec un support de protocole natif. TCP/UDP via le framework Network, MQTT avec contrôle de session complet (QoS, keep-alive, abonnement automatique), WebSocket avec en-têtes personnalisés et SSL. Prend en charge les encodages UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-encodage'],
+    },
+    pipeline: {
+      title: 'Analyseur de messages programmable',
+      subtitle: '7 types de gestionnaires pour l\'analyse structurée de messages avec scripts JavaScript',
+      desc: 'Un analyseur visuel de messages avec les gestionnaires Parse, Filter, Compute, Compose, Algorithm, Mapping et Script. Extrayez des valeurs depuis hex/JSON/XML/chaîne, filtrez par conditions, calculez avec des expressions JavaScript et transformez en sortie structurée — le tout avec des journaux de débogage étape par étape et des instantanés de données intermédiaires.',
+      tags: ['7 types de gestionnaires', 'Scripts JavaScript', 'Hex / JSON / XML / Chaîne', 'Débogage pas à pas'],
+    },
+    analyzer: {
+      title: 'Analyseur de protocole',
+      subtitle: 'Détection et analyse automatiques des trames MODBUS RTU/TCP et DL/T 645',
+      desc: 'Entrez de l\'hex brut et obtenez des analyses de champs structurées : adresse esclave, code fonction, valeurs de registre, vérification CRC-16. Prend en charge les interprétations entières signées/non signées, BCD et flottantes IEEE 754. Construction de trames MODBUS intégrée pour les opérations de lecture/écriture.',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Analyse de champs', 'Construction de trames'],
+    },
+    tools: {
+      title: 'Suite d\'outils réseau',
+      subtitle: '7 outils essentiels : Ping, Scanner de ports, Whois, DNS, SSL, Telnet, IP Query',
+      desc: 'Tous les utilitaires réseau dont vous avez besoin en un seul endroit. Ping ICMP, scan de plage de ports TCP avec progression, recherche WHOIS, requêtes DNS directes/inverses, inspection de certificats TLS, sessions Telnet interactives et géolocalisation IP. Les outils sont réorganisables par glisser-déposer.',
+      tags: ['Ping & Scanner de ports', 'Whois & DNS', 'Certificat SSL', 'Telnet & IP Query'],
+    },
+    workspace: {
+      title: 'Gestion des sessions et de l\'espace de travail',
+      subtitle: 'Organisez les connexions en groupes avec icônes, couleurs et sessions multiples personnalisées',
+      desc: 'Regroupez les connexions par projet ou environnement. Chaque connexion peut générer plusieurs sessions indépendantes (par ex., différentes informations d\'identification MQTT). Réorganisation par glisser-déposer des connexions, groupes et onglets. Persistance complète de l\'état entre les redémarrages.',
+      tags: ['Groupes de connexion', 'Multi-session', 'Glisser-déposer', 'Persistance d\'état'],
+    },
+    utilities: {
+      title: 'Utilitaires de traitement de données',
+      subtitle: 'Somme de contrôle, compression, chiffrement et conversion d\'octets intégrés',
+      desc: 'Calcul CRC-16, Checksum, LRC. Compression GZIP, Deflate, Zlib. Chiffrement Base64 et AES (ECB/CBC, 128/256 bits). Conversion hex vers données et données vers hex. Plus un éditeur de messages dédié avec police monospace accessible depuis n\'importe quelle session.',
+      tags: ['CRC & Checksum', 'GZIP / Deflate / Zlib', 'Chiffrement AES', 'Conversion Hex'],
+    },
+  },
+  painMatrix: {
+    heading: 'Problèmes et solutions',
+    title: '6 problèmes',
+    titleHighlight: 'Une solution',
+    solution: 'CommuKit',
+    items: [
+      { pain: 'Fragmentation des outils', painDesc: 'Client TCP, client MQTT, client WebSocket, parseur hex, calculateur de somme de contrôle, outil ping — chacun est une application ou un outil en ligne de commande distinct.', solution: 'Workbench tout-en-un', solnDesc: 'Une seule application pour tous les protocoles et outils. Passez de TCP à MQTT, WebSocket et 7 utilitaires réseau sans quitter l\'espace de travail.' },
+      { pain: 'Parsing hex manuel', painDesc: 'Les réponses hex brutes des appareils industriels nécessitent un comptage manuel des octets, un calcul de décalage et une conversion des valeurs à chaque fois.', solution: 'Éditeur de pipeline visuel', solnDesc: 'Définissez les règles de parsing une fois. Le pipeline extrait, transforme et mappe les valeurs automatiquement. Déboguez avec des instantanés de données étape par étape.' },
+      { pain: 'Pas de reconnaissance de protocole', painDesc: 'Les outils hex génériques ne comprennent pas les trames MODBUS ou DL/T 645. Il faut décoder manuellement les codes fonction et calculer les CRC.', solution: 'Analyseur de protocole intégré', solnDesc: 'Détection automatique du type de protocole. Analyse structurée des champs avec interprétation des valeurs. Construction de trames MODBUS intégrée pour les commandes lecture/écriture.' },
+      { pain: 'Utilitaires dispersés', painDesc: 'Ping, scan de ports, recherche DNS, vérification SSL — chacun nécessite une fenêtre de terminal ou un site web différent. Changement de contexte constant.', solution: 'Suite d\'outils intégrée', solnDesc: '7 outils réseau dans la barre latérale. Réorganisez par glisser-déposer. Les résultats restent visibles pendant que vous travaillez sur les connexions.' },
+      { pain: 'Perte d\'état de connexion', painDesc: 'Fermez un onglet et perdez la session. Redémarrez l\'application et reconfigurez chaque connexion à partir de zéro. Aucune persistance entre les sessions.', solution: 'Persistance complète de l\'espace de travail', solnDesc: 'Groupes, connexions, sessions, favoris et configurations de pipeline sont tous conservés. Sauvegarde intelligente avec rétention horaire/quotidienne/hebdomadaire.' },
+      { pain: 'Problèmes d\'encodage', painDesc: 'Les appareils industriels utilisent GB2312, Shift-JIS, Big5 — la plupart des outils ne prennent en charge que l\'UTF-8, rendant les données non-ASCII illisibles.', solution: 'Support de 8 encodages', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Changez d\'encodage par connexion. Voyez les octets comme prévu.' },
+    ],
+  },
+  cta: { title: 'Commencez à construire avec CommuKit', desc: 'Gratuit. Sans pub. Expérience Apple native. Nécessite macOS 14+.', download: 'Télécharger pour macOS' },
+  footer: { changelog: 'Journal des modifications', download: 'Télécharger' },
+}
+
+const es: typeof en = {
+  nav: { features: 'Funciones', download: 'Descargar' },
+  hero: {
+    badge: 'Conectar · Analizar · Transformar',
+    title1: 'Workbench de comunicación de red para desarrolladores',
+    subtitle: 'Una herramienta de depuración de red multiprotocolo con un pipeline de mensajes programable, analizador de protocolos y soporte para protocolos IoT industriales.',
+    download: 'Descarga gratuita',
+    learn: 'Más información',
+    note: 'Requiere macOS 14+ · Gratis',
+  },
+  features: {
+    protocols: {
+      title: 'Conexión multiprotocolo',
+      subtitle: 'TCP, UDP, MQTT, WebSocket — todo en un cliente unificado',
+      desc: 'Conéctese a cualquier endpoint con soporte de protocolo nativo. TCP/UDP mediante el framework Network, MQTT con control completo de sesión (QoS, keep-alive, suscripción automática), WebSocket con cabeceras personalizadas y SSL. Soporta codificaciones UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-codificación'],
+    },
+    pipeline: {
+      title: 'Parser de mensajes programable',
+      subtitle: '7 tipos de manejadores para análisis estructurado de mensajes con scripting JavaScript',
+      desc: 'Un parser visual de mensajes con manejadores Parse, Filter, Compute, Compose, Algorithm, Mapping y Script. Extraiga valores de hex/JSON/XML/cadena, filtre por condiciones, calcule con expresiones JavaScript y transforme en salida estructurada — todo con registros de depuración paso a paso e instantáneas de datos intermedios.',
+      tags: ['7 tipos de manejadores', 'Scripting JavaScript', 'Hex / JSON / XML / Cadena', 'Depuración paso a paso'],
+    },
+    analyzer: {
+      title: 'Analizador de protocolos',
+      subtitle: 'Detección y análisis automático de tramas MODBUS RTU/TCP y DL/T 645',
+      desc: 'Ingrese hex sin procesar y obtenga desgloses de campo estructurados: dirección esclavo, código de función, valores de registro, verificación CRC-16. Soporta interpretaciones de enteros con/sin signo, BCD y flotantes IEEE 754. Construcción de tramas MODBUS integrada para operaciones de lectura/escritura.',
+      tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Análisis de campos', 'Construcción de tramas'],
+    },
+    tools: {
+      title: 'Suite de herramientas de red',
+      subtitle: '7 herramientas esenciales: Ping, Escáner de puertos, Whois, DNS, SSL, Telnet, Consulta IP',
+      desc: 'Todas las utilidades de red que necesita en un solo lugar. Ping ICMP, escaneo de rango de puertos TCP con progreso, consulta WHOIS, consultas DNS directas/inversas, inspección de certificados TLS, sesiones Telnet interactivas y geolocalización IP. Las herramientas se pueden reordenar arrastrando y soltando.',
+      tags: ['Ping y Escáner de puertos', 'Whois y DNS', 'Certificado SSL', 'Telnet y Consulta IP'],
+    },
+    workspace: {
+      title: 'Gestión de sesiones y espacio de trabajo',
+      subtitle: 'Organice conexiones en grupos con iconos, colores y múltiples sesiones personalizadas',
+      desc: 'Agrupe conexiones por proyecto o entorno. Cada conexión puede generar múltiples sesiones independientes (por ej., diferentes credenciales MQTT). Reordenamiento por arrastrar y soltar para conexiones, grupos y pestañas. Persistencia completa del estado entre reinicios de la aplicación.',
+      tags: ['Grupos de conexión', 'Multi-sesión', 'Arrastrar y soltar', 'Persistencia de estado'],
+    },
+    utilities: {
+      title: 'Utilidades de procesamiento de datos',
+      subtitle: 'Checksum, compresión, cifrado y conversión de bytes integrados',
+      desc: 'Cálculo CRC-16, Checksum, LRC. Compresión GZIP, Deflate, Zlib. Cifrado Base64 y AES (ECB/CBC, 128/256 bits). Conversión hex a datos y datos a hex. Además, un editor de mensajes dedicado con fuente monoespaciada accesible desde cualquier sesión.',
+      tags: ['CRC y Checksum', 'GZIP / Deflate / Zlib', 'Cifrado AES', 'Conversión Hex'],
+    },
+  },
+  painMatrix: {
+    heading: 'Problemas y soluciones',
+    title: '6 problemas',
+    titleHighlight: 'Una solución',
+    solution: 'CommuKit',
+    items: [
+      { pain: 'Fragmentación de herramientas', painDesc: 'Cliente TCP, cliente MQTT, cliente WebSocket, analizador hex, calculadora de checksum, herramienta ping — cada uno es una aplicación o herramienta de línea de comandos separada.', solution: 'Workbench todo en uno', solnDesc: 'Una aplicación para todos los protocolos y herramientas. Cambie entre TCP, MQTT, WebSocket y 7 utilidades de red sin salir del espacio de trabajo.' },
+      { pain: 'Análisis hex manual', painDesc: 'Las respuestas hex sin procesar de dispositivos industriales requieren conteo manual de bytes, cálculo de desplazamiento y conversión de valores cada vez.', solution: 'Editor de pipeline visual', solnDesc: 'Defina reglas de análisis una vez. El pipeline extrae, transforma y mapea valores automáticamente. Depure con instantáneas de datos paso a paso.' },
+      { pain: 'Sin reconocimiento de protocolo', painDesc: 'Las herramientas hex genéricas no entienden tramas MODBUS o DL/T 645. Hay que decodificar manualmente los códigos de función y calcular los CRC.', solution: 'Analizador de protocolo integrado', solnDesc: 'Detección automática del tipo de protocolo. Análisis de campo estructurado con interpretación de valores. Construcción de tramas MODBUS integrada para comandos de lectura/escritura.' },
+      { pain: 'Utilidades dispersas', painDesc: 'Ping, escaneo de puertos, búsqueda DNS, verificación SSL — cada uno requiere una ventana de terminal o un sitio web diferente. Cambio de contexto constante.', solution: 'Suite de herramientas integrada', solnDesc: '7 herramientas de red en la barra lateral. Reordene arrastrando y soltando. Los resultados permanecen visibles mientras trabaja en las conexiones.' },
+      { pain: 'Pérdida del estado de conexión', painDesc: 'Cierre una pestaña y pierda la sesión. Reinicie la aplicación y reconfigure cada conexión desde cero. Sin persistencia entre sesiones.', solution: 'Persistencia completa del espacio de trabajo', solnDesc: 'Grupos, conexiones, sesiones, favoritos y configuraciones de pipeline se conservan. Copia de seguridad inteligente con retención horaria/diaria/semanal.' },
+      { pain: 'Problemas de codificación', painDesc: 'Los dispositivos industriales usan GB2312, Shift-JIS, Big5 — la mayoría de las herramientas solo admiten UTF-8, haciendo que los datos no ASCII sean ilegibles.', solution: 'Soporte para 8 codificaciones', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Cambie la codificación por conexión. Vea los bytes como se pretendía.' },
+    ],
+  },
+  cta: { title: 'Comience a construir con CommuKit', desc: 'Gratis. Sin anuncios. Experiencia nativa Apple. Requiere macOS 14+.', download: 'Descargar para macOS' },
+  footer: { changelog: 'Registro de cambios', download: 'Descargar' },
+}
+
+export type Lang = 'en' | 'zh' | 'ja' | 'ko' | 'de' | 'fr' | 'es'
+export type Translations = typeof en
+export const translations: Record<Lang, Translations> = { en, zh, ja, ko, de, fr, es }
+
+export const LANG_LABEL: Record<Lang, string> = {
+  en: 'English',
+  zh: '中文',
+  ja: '日本語',
+  ko: '한국어',
+  de: 'Deutsch',
+  fr: 'Français',
+  es: 'Español',
+}
+
+export const LANG_HTML: Record<Lang, string> = {
+  en: 'en',
+  zh: 'zh-Hans',
+  ja: 'ja',
+  ko: 'ko',
+  de: 'de',
+  fr: 'fr',
+  es: 'es',
+}
