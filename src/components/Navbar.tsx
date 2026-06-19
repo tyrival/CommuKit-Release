@@ -29,7 +29,7 @@ export default function Navbar() {
           <img
             src={theme === 'dark' ? logoDark : logoLight}
             alt="CommuKit"
-            className="h-7 w-auto rounded-lg border-2 border-[#00BFFF]"
+            className="h-7 w-auto rounded-lg border border-[#00BFFF]"
           />
           <span className="text-lg font-bold text-[#1d1d1f] dark:text-[#e8e8ed] tracking-tight group-hover:text-[#0085ff] dark:group-hover:text-[#00bfff] transition-colors">CommuKit</span>
         </a>
