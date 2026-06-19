@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
-import { Download, Sun, Moon, ChevronDown, Terminal } from 'lucide-react'
+import { Download, Sun, Moon, ChevronDown } from 'lucide-react'
 import { useI18n } from '../i18n/I18nContext'
 import { useTheme } from '../theme/ThemeContext'
 import { type Lang, LANG_LABEL } from '../i18n/translations'
+import logoDark from '../assets/logo-dark.jpg'
+import logoLight from '../assets/logo-light.jpg'
 
 const ALL_LANGS: Lang[] = ['en', 'zh', 'ja', 'ko', 'de', 'fr', 'es']
 
@@ -24,10 +26,11 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f8f9fb]/80 dark:bg-[#0a0d14]/75 backdrop-blur-xl border-b border-[#e5e5ea] dark:border-[#1e2230]">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 no-underline group">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#0085ff] to-[#00bfff] flex items-center justify-center">
-            <Terminal size={15} className="text-white" />
-          </div>
-          <span className="text-lg font-bold text-[#1d1d1f] dark:text-[#e8e8ed] tracking-tight group-hover:text-[#0085ff] dark:group-hover:text-[#00bfff] transition-colors">CommuKit</span>
+          <img
+            src={theme === 'dark' ? logoLight : logoDark}
+            alt="CommuKit"
+            className="h-7 w-auto"
+          />
         </a>
 
         <div className="flex items-center gap-1.5">
