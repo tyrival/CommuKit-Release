@@ -32,33 +32,39 @@ function AppContent() {
       />
       <FeatureSection
         id="pipeline"
-        icon={Workflow}
+        icon={Braces}
         mockup={<AppMockup variant="pipeline" />}
         reverse={true}
+      />
+      <FeatureSection
+        id="workflow"
+        icon={Workflow}
+        mockup={<AppMockup variant="workflow" />}
+        reverse={false}
       />
       <FeatureSection
         id="analyzer"
         icon={Cpu}
         mockup={<AppMockup variant="analyzer" />}
-        reverse={false}
+        reverse={true}
       />
       <FeatureSection
         id="tools"
         icon={Wrench}
         mockup={<AppMockup variant="tools" />}
-        reverse={true}
+        reverse={false}
       />
       <FeatureSection
         id="workspace"
         icon={Layers}
         mockup={<AppMockup variant="workspace" />}
-        reverse={false}
+        reverse={true}
       />
       <FeatureSection
         id="utilities"
         icon={Braces}
         mockup={<AppMockup variant="utilities" />}
-        reverse={true}
+        reverse={false}
       />
       <PainMatrix />
       <CTA />

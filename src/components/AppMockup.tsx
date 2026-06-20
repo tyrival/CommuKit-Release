@@ -1,6 +1,6 @@
 import { Activity, Braces, Calculator, ChevronRight, Cpu, Globe, Hash, Monitor, Search, Server, Shield, Wifi, Workflow, Zap } from 'lucide-react'
 
-type Variant = 'hero' | 'protocols' | 'pipeline' | 'analyzer' | 'tools' | 'workspace' | 'utilities'
+type Variant = 'hero' | 'protocols' | 'pipeline' | 'workflow' | 'analyzer' | 'tools' | 'workspace' | 'utilities'
 
 interface Props { variant: Variant }
 
@@ -9,6 +9,7 @@ export default function AppMockup({ variant }: Props) {
     case 'hero': return <HeroMockup />
     case 'protocols': return <ProtocolsMockup />
     case 'pipeline': return <PipelineMockup />
+    case 'workflow': return <WorkflowMockup />
     case 'analyzer': return <AnalyzerMockup />
     case 'tools': return <ToolsMockup />
     case 'workspace': return <WorkspaceMockup />
@@ -219,6 +220,60 @@ function PipelineMockup() {
             <div className="text-[#1d1d1f] dark:text-[#e8e8ed] ml-3">"status": <span className="text-[#30d158]">"Normal"</span>,</div>
             <div className="text-[#1d1d1f] dark:text-[#e8e8ed] ml-3">"timestamp": <span className="text-[#bf5af2]">"2026-06-18T14:32:01"</span></div>
             <div className="text-[#1d1d1f] dark:text-[#e8e8ed]">{'}'}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function WorkflowMockup() {
+  const steps = [
+    { name: 'Send request', detail: '01 03 00 00 00 02 C4 0B', state: 'Sent', color: 'text-[#0085ff] dark:text-[#00bfff]' },
+    { name: 'Wait for matching reply', detail: 'temperature > 20', state: 'Matched', color: 'text-[#ff9f0a]' },
+    { name: 'Send follow-up', detail: '${read.reply.deviceId}', state: 'Done', color: 'text-[#30d158]' },
+  ]
+
+  return (
+    <div className="rounded-xl border border-[#e5e5ea] dark:border-[#1e2230] bg-white dark:bg-[#13161f] overflow-hidden shadow-lg">
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0085ff]/40 dark:via-[#00bfff]/40 to-transparent" />
+      </div>
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <Workflow size={14} className="text-[#0085ff] dark:text-[#00bfff]" />
+          <span className="text-xs font-semibold text-[#1d1d1f] dark:text-[#e8e8ed]">Flow: Device telemetry handshake</span>
+          <span className="ml-auto px-2 py-0.5 rounded-full bg-[#30d158]/10 text-[#30d158] text-[9px] font-semibold">Completed</span>
+        </div>
+
+        <div className="space-y-2">
+          {steps.map((step, i) => (
+            <div key={step.name} className="flex items-stretch gap-2.5">
+              <div className="flex flex-col items-center">
+                <div className={`w-6 h-6 rounded-full border border-current bg-current/5 flex items-center justify-center text-[10px] font-bold ${step.color}`}>
+                  {i + 1}
+                </div>
+                {i < steps.length - 1 && <div className="w-px flex-1 min-h-3 bg-[#e5e5ea] dark:bg-[#2a2d3a]" />}
+              </div>
+              <div className="flex-1 flex items-center gap-3 px-3 py-2 rounded-lg border border-[#e5e5ea] dark:border-[#1e2230] bg-[#f5f5f7]/60 dark:bg-[#0d0f17]/60">
+                <div className="min-w-0 flex-1">
+                  <div className="text-[11px] font-semibold text-[#1d1d1f] dark:text-[#e8e8ed]">{step.name}</div>
+                  <div className="text-[9px] font-mono text-[#8e8e93] dark:text-[#6a6a7a] truncate">{step.detail}</div>
+                </div>
+                <span className={`text-[9px] font-semibold ${step.color}`}>{step.state}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 rounded-lg border border-[#0085ff]/15 dark:border-[#00bfff]/15 bg-[#0085ff]/5 dark:bg-[#00bfff]/5 px-3 py-2">
+          <div className="flex items-center gap-1.5 text-[9px] font-semibold text-[#0085ff] dark:text-[#00bfff] mb-1">
+            <Activity size={10} /> Live run context
+          </div>
+          <div className="font-mono text-[9px] text-[#6e6e73] dark:text-[#8e8e9a]">
+            read.reply.temperature <span className="text-[#ff9f0a]">24.5</span>
+            <span className="mx-2 text-[#aeaeb2]">→</span>
+            followUp.send.deviceId <span className="text-[#30d158]">A-104</span>
           </div>
         </div>
       </div>

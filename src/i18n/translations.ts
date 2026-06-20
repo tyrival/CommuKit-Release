@@ -3,7 +3,7 @@ const en = {
   hero: {
     badge: 'Connect. Parse. Transform.',
     title1: 'Developer\'s Network Communication Workbench',
-    subtitle: 'A multi-protocol network debugging tool with a programmable message pipeline, protocol analyzer, and industrial IoT protocol support.',
+    subtitle: 'A multi-protocol network debugging tool with a programmable message parser, communication workflows, automatic protocol detection, and industrial IoT protocol support.',
     download: 'Free Download',
     learn: 'Learn More',
     note: 'Requires macOS 14+ · Free',
@@ -21,8 +21,14 @@ const en = {
       desc: 'A visual message parser with Parse, Filter, Compute, Compose, Algorithm, Mapping, and Script handlers. Extract values from hex/JSON/XML/string, filter by conditions, compute with JavaScript expressions, and transform into structured output — all with step-by-step debug logs and intermediate data snapshots.',
       tags: ['7 Handler Types', 'JavaScript Scripting', 'Hex / JSON / XML / String', 'Step Debugging'],
     },
+    workflow: {
+      title: 'Multi-Step Communication Workflows',
+      subtitle: 'Automate send, wait, match, and follow-up sequences across live sessions',
+      desc: 'Build reusable message workflows that run against real connections. Chain requests, delay or wait for replies, match structured conditions, and feed data from earlier steps into later messages. Attach parsers before sending and after receiving, with complete run logs for every step.',
+      tags: ['Sequential Messaging', 'Reply Matching', 'Parser Chaining', 'Run Logs'],
+    },
     analyzer: {
-      title: 'Protocol Analyzer',
+      title: 'Automatic Protocol Detection',
       subtitle: 'Auto-detect and dissect MODBUS RTU/TCP and DL/T 645 frames',
       desc: 'Point it at raw hex and get structured field breakdowns: slave address, function code, register values, CRC-16 verification. Supports signed/unsigned int, BCD, and IEEE 754 float interpretations. Built-in MODBUS frame construction for read/write operations.',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Field Dissection', 'Frame Construction'],
@@ -48,19 +54,20 @@ const en = {
   },
   painMatrix: {
     heading: 'Pain Points & Solutions',
-    title: '6 Pain Points',
+    title: '7 Pain Points',
     titleHighlight: 'One Solution',
     solution: 'CommuKit',
     items: [
       { pain: 'Tool Fragmentation', painDesc: 'TCP client, MQTT client, WebSocket client, hex parser, checksum calculator, ping tool — each is a separate app or command-line tool.', solution: 'All-in-One Workbench', solnDesc: 'One app for all protocols and tools. Switch between TCP, MQTT, WebSocket, and 7 network utilities without leaving the workspace.' },
       { pain: 'Manual Hex Parsing', painDesc: 'Raw hex response from industrial devices requires manual byte counting, offset calculation, and value conversion every time.', solution: 'Visual Pipeline Editor', solnDesc: 'Define parse rules once. The pipeline extracts, transforms, and maps values automatically. Debug with step-by-step data snapshots.' },
-      { pain: 'No Protocol Awareness', painDesc: 'Generic hex tools don\'t understand MODBUS or DL/T 645 frames. You have to manually decode function codes and calculate CRCs.', solution: 'Built-in Protocol Analyzer', solnDesc: 'Auto-detect protocol type. Structured field breakdown with value interpretation. Built-in MODBUS frame construction for read/write commands.' },
+      { pain: 'Repetitive Message Sequences', painDesc: 'Multi-step device tests mean repeatedly sending requests, waiting for replies, checking fields, and manually carrying values into the next message.', solution: 'Automated Communication Workflows', solnDesc: 'Define send, wait, and match rules once. Reuse earlier step data in later messages, chain parsers before sending and after receiving, and keep a complete run log.' },
+      { pain: 'No Protocol Awareness', painDesc: 'Generic hex tools don\'t understand MODBUS or DL/T 645 frames. You have to manually decode function codes and calculate CRCs.', solution: 'Automatic Protocol Detection', solnDesc: 'Auto-detect protocol type. Structured field breakdown with value interpretation. Built-in MODBUS frame construction for read/write commands.' },
       { pain: 'Scattered Utilities', painDesc: 'Ping, port scan, DNS lookup, SSL check — each requires a terminal window or different website. Context switching is constant.', solution: 'Integrated Tool Suite', solnDesc: '7 network tools in the sidebar. Reorder via drag-and-drop. Results stay visible while you work on connections.' },
       { pain: 'Lost Connection State', painDesc: 'Close a tab and lose the session. Restart the app and reconfigure every connection from scratch. No persistence across sessions.', solution: 'Full Workspace Persistence', solnDesc: 'Groups, connections, sessions, favorites, and pipeline configs all persist. Smart backup with hourly/daily/weekly retention.' },
       { pain: 'Encoding Headaches', painDesc: 'Industrial devices use GB2312, Shift-JIS, Big5 — most tools only support UTF-8, making non-ASCII payloads unreadable.', solution: '8 Encoding Support', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Switch encoding per connection. See the bytes as intended.' },
     ],
   },
-  cta: { title: 'Start Building with CommuKit', desc: 'Free. No ads. Native macOS experience. Requires macOS 14+.', download: 'Download for macOS' },
+  cta: { title: 'Start Building with CommuKit', desc: 'Connect, parse, and automate multi-step communication workflows in one native macOS workbench. Free, no ads. Requires macOS 14+.', download: 'Download for macOS' },
   footer: { changelog: 'Changelog', download: 'Download' },
 }
 
@@ -69,7 +76,7 @@ const zh: typeof en = {
   hero: {
     badge: '连接 · 解析 · 转换',
     title1: '开发者网络通讯工作台',
-    subtitle: '多协议网络调试工具，内置可编程消息管线、协议解析器及工业物联网协议支持。',
+    subtitle: '多协议网络调试工具，内置可编程消息解析器、通讯工作流、协议自动识别及工业物联网协议支持。',
     download: '免费下载',
     learn: '了解特性',
     note: '要求 macOS 14+ · 完全免费',
@@ -87,8 +94,14 @@ const zh: typeof en = {
       desc: '可视化消息解析器，内置 Parse、Filter、Compute、Compose、Algorithm、Mapping、Script 七种处理器。支持从 hex/JSON/XML/字符串中提取数据、条件过滤、JavaScript 表达式计算、输出结构化转换，提供逐步调试日志与中间数据快照。',
       tags: ['7 种处理器', 'JavaScript 脚本', 'Hex / JSON / XML / 字符串', '逐步调试'],
     },
+    workflow: {
+      title: '通讯工作流',
+      subtitle: '编排发送、等待、匹配与后续消息，让多步调试自动运行',
+      desc: '创建可复用的消息工作流并在真实连接会话中运行。按顺序发送请求，可延时推进、等待任意回复或按结构化条件匹配回复，并把前序步骤的数据带入后续消息。发送前与接收后均可串联解析器，完整记录每一步运行日志。',
+      tags: ['多步消息', '条件匹配', '解析器串联', '运行日志'],
+    },
     analyzer: {
-      title: '协议解析器',
+      title: '协议自动识别',
       subtitle: '自动识别并解析 MODBUS RTU/TCP 与 DL/T 645 报文',
       desc: '输入原始 hex 即可获得结构化字段解析：从站地址、功能码、寄存器值、CRC-16 校验。支持有符号/无符号整数、BCD 码与 IEEE 754 浮点数解读。内置 MODBUS 读写帧构造功能。',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', '字段解析', '帧构造'],
@@ -114,19 +127,20 @@ const zh: typeof en = {
   },
   painMatrix: {
     heading: '痛点与方案',
-    title: '6 个痛点',
+    title: '7 个痛点',
     titleHighlight: '一个方案',
     solution: 'CommuKit',
     items: [
       { pain: '工具碎片化', painDesc: 'TCP 客户端、MQTT 客户端、WebSocket 客户端、Hex 解析器、校验计算器、Ping 工具——各自独立，来回切换。', solution: '一站式工作台', solnDesc: '一个 App 覆盖所有协议与工具。在 TCP、MQTT、WebSocket 与 7 种网络工具之间无缝切换，无需离开工作区。' },
       { pain: '手动 Hex 解析', painDesc: '工业设备返回的原始 hex 报文，每次都要手动数字节、算偏移、转换数值，耗时且易出错。', solution: '可视化管线编辑器', solnDesc: '一次定义解析规则，管线自动提取、转换、映射数值。逐步数据快照让调试一目了然。' },
-      { pain: '缺乏协议感知', painDesc: '通用 hex 工具不理解 MODBUS 或 DL/T 645 报文结构，只能手动解码功能码并计算 CRC。', solution: '内置协议解析器', solnDesc: '自动识别协议类型。字段结构化解析并给出数值解读。内置 MODBUS 帧构造，直接生成读写命令帧。' },
+      { pain: '重复的多步通讯', painDesc: '设备联调经常需要反复发送多条消息、等待回复、检查字段，再把上一步结果手动填入下一条消息，流程长且容易漏步。', solution: '自动化通讯工作流', solnDesc: '一次编排发送、等待与匹配规则。前序步骤数据可直接传给后续消息，发送前与接收后可串联解析器，并保留完整运行日志。' },
+      { pain: '缺乏协议感知', painDesc: '通用 hex 工具不理解 MODBUS 或 DL/T 645 报文结构，只能手动解码功能码并计算 CRC。', solution: '协议自动识别', solnDesc: '自动识别协议类型。字段结构化解析并给出数值解读。内置 MODBUS 帧构造，直接生成读写命令帧。' },
       { pain: '工具散落各处', painDesc: 'Ping、端口扫描、DNS 查询、SSL 检查——每个都要开终端或不同网页，上下文频繁切换。', solution: '集成工具套件', solnDesc: '侧边栏内置 7 种网络工具。支持拖拽排序。查询结果常驻显示，不影响连接调试工作。' },
       { pain: '连接状态丢失', painDesc: '关闭标签页即丢失会话。重启应用后所有连接配置需手动重新搭建，没有持久化。', solution: '完整工作区持久化', solnDesc: '分组、连接、会话、收藏夹、管线配置全部持久保存。智能备份策略：每小时/每天/每周自动保留。' },
       { pain: '编码困扰', painDesc: '工业设备使用 GB2312、Shift-JIS、Big5 编码，大多数工具仅支持 UTF-8，非 ASCII 报文显示乱码。', solution: '8 种编码支持', solnDesc: 'UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS。每个连接独立切换编码，报文以正确字符集显示。' },
     ],
   },
-  cta: { title: '开始使用 CommuKit 构建', desc: '免费、无广告、Apple 原生体验。支持 macOS 14+。', download: '下载 macOS 版' },
+  cta: { title: '开始使用 CommuKit 构建', desc: '连接、解析并自动运行多步通讯工作流，全部集中在一个 Apple 原生工作台。免费、无广告，支持 macOS 14+。', download: '下载 macOS 版' },
   footer: { changelog: '更新日志', download: '下载' },
 }
 
@@ -135,7 +149,7 @@ const ja: typeof en = {
   hero: {
     badge: '接続 · 解析 · 変換',
     title1: '開発者のためのネットワーク通信ワークベンチ',
-    subtitle: 'マルチプロトコルネットワークデバッグツール。プログラマブルなメッセージパイプライン、プロトコルアナライザ、産業用IoTプロトコルをサポート。',
+    subtitle: 'プログラマブルメッセージパーサー、通信ワークフロー、プロトコル自動識別、産業用IoTプロトコルに対応したマルチプロトコルネットワークデバッグツール。',
     download: '無料ダウンロード',
     learn: '詳細を見る',
     note: 'macOS 14+ 対応 · 完全無料',
@@ -153,8 +167,14 @@ const ja: typeof en = {
       desc: 'Parse、Filter、Compute、Compose、Algorithm、Mapping、Scriptの7種類のハンドラを備えたビジュアルメッセージパーサー。hex/JSON/XML/文字列から値を抽出し、条件でフィルタし、JavaScript式で計算し、構造化された出力に変換します。ステップバイステップのデバッグログと中間データスナップショット付き。',
       tags: ['7種類のハンドラ', 'JavaScriptスクリプト', 'Hex / JSON / XML / 文字列', 'ステップデバッグ'],
     },
+    workflow: {
+      title: 'マルチステップ通信ワークフロー',
+      subtitle: '実際のセッションで送信、待機、照合、後続メッセージを自動化',
+      desc: '実際の接続上で動作する再利用可能なメッセージワークフローを作成します。リクエストを連結し、遅延または返信を待機し、構造化条件で照合して、前のステップのデータを後続メッセージに渡せます。送信前と受信後にパーサーを連結し、各ステップの完全な実行ログを記録します。',
+      tags: ['順次メッセージ', '返信照合', 'パーサー連結', '実行ログ'],
+    },
     analyzer: {
-      title: 'プロトコルアナライザ',
+      title: 'プロトコル自動識別',
       subtitle: 'MODBUS RTU/TCPおよびDL/T 645フレームの自動検出と解析',
       desc: '生のhexを入力するだけで構造化されたフィールド解析が得られます：スレーブアドレス、ファンクションコード、レジスタ値、CRC-16検証。符号付き/符号なし整数、BCD、IEEE 754 float解釈に対応。読み取り/書き込み操作用のMODBUSフレーム構築機能を内蔵。',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', 'フィールド解析', 'フレーム構築'],
@@ -180,19 +200,20 @@ const ja: typeof en = {
   },
   painMatrix: {
     heading: '課題と解決策',
-    title: '6つの課題',
+    title: '7つの課題',
     titleHighlight: '1つの解決策',
     solution: 'CommuKit',
     items: [
       { pain: 'ツールの断片化', painDesc: 'TCPクライアント、MQTTクライアント、WebSocketクライアント、Hexパーサー、チェックサム計算機、Pingツール — それぞれが別のアプリやコマンドラインツール。', solution: 'オールインワンワークベンチ', solnDesc: '1つのアプリですべてのプロトコルとツールに対応。ワークスペースを離れることなくTCP、MQTT、WebSocket、7つのネットワークユーティリティを切り替え。' },
       { pain: '手動Hex解析', painDesc: '産業用デバイスからの生のhex応答は、毎回手動でバイトカウント、オフセット計算、値変換が必要。', solution: 'ビジュアルパイプラインエディタ', solnDesc: '解析ルールを一度定義すれば、パイプラインが自動的に値を抽出・変換・マッピング。ステップバイステップのデータスナップショットでデバッグ。' },
-      { pain: 'プロトコル非対応', painDesc: '汎用hexツールはMODBUSやDL/T 645フレームを理解せず、手動でファンクションコードを解読しCRCを計算する必要がある。', solution: '内蔵プロトコルアナライザ', solnDesc: 'プロトコルタイプを自動検出。値解釈付きの構造化フィールド解析。読み取り/書き込みコマンド用のMODBUSフレーム構築機能内蔵。' },
+      { pain: '繰り返しの多段通信', painDesc: '複数ステップのデバイステストでは、要求の送信、返信待ち、フィールド確認、次のメッセージへの値の転記を毎回手作業で繰り返します。', solution: '通信ワークフローの自動化', solnDesc: '送信、待機、照合ルールを一度定義。前のステップのデータを後続メッセージで再利用し、送受信前後にパーサーを連結して、完全な実行ログを残せます。' },
+      { pain: 'プロトコル非対応', painDesc: '汎用hexツールはMODBUSやDL/T 645フレームを理解せず、手動でファンクションコードを解読しCRCを計算する必要がある。', solution: 'プロトコル自動識別', solnDesc: 'プロトコルタイプを自動検出。値解釈付きの構造化フィールド解析。読み取り/書き込みコマンド用のMODBUSフレーム構築機能内蔵。' },
       { pain: '散在するユーティリティ', painDesc: 'Ping、ポートスキャン、DNS検索、SSLチェック — それぞれにターミナルや別のウェブサイトが必要。常にコンテキストスイッチが発生。', solution: '統合ツールスイート', solnDesc: 'サイドバーに7つのネットワークツールを統合。ドラッグ＆ドロップで並べ替え。接続作業中も結果が表示されたまま。' },
       { pain: '接続状態の喪失', painDesc: 'タブを閉じるとセッションが失われる。アプリを再起動するとすべての接続設定を一から再構成。セッション間の永続性なし。', solution: '完全なワークスペース永続化', solnDesc: 'グループ、接続、セッション、お気に入り、パイプライン設定すべてが永続化。毎時/毎日/毎週のスマートバックアップ保持。' },
       { pain: 'エンコーディングの悩み', painDesc: '産業用デバイスはGB2312、Shift-JIS、Big5を使用するが、ほとんどのツールはUTF-8のみ対応で非ASCIIペイロードが文字化け。', solution: '8種類のエンコーディング対応', solnDesc: 'UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS。接続ごとにエンコーディングを切り替え。意図した文字セットでバイトを表示。' },
     ],
   },
-  cta: { title: 'CommuKitで構築を始めましょう', desc: '無料・広告なし・Appleネイティブ体験。macOS 14+対応。', download: 'macOS版をダウンロード' },
+  cta: { title: 'CommuKitで構築を始めましょう', desc: '接続、解析、マルチステップ通信ワークフローの自動実行を、1つのAppleネイティブワークベンチで。無料・広告なし。macOS 14+対応。', download: 'macOS版をダウンロード' },
   footer: { changelog: '変更履歴', download: 'ダウンロード' },
 }
 
@@ -201,7 +222,7 @@ const ko: typeof en = {
   hero: {
     badge: '연결 · 파싱 · 변환',
     title1: '개발자를 위한 네트워크 통신 워크벤치',
-    subtitle: '프로그래머블 메시지 파이프라인, 프로토콜 분석기, 산업용 IoT 프로토콜 지원을 갖춘 멀티 프로토콜 네트워크 디버깅 도구.',
+    subtitle: '프로그래머블 메시지 파서, 통신 워크플로, 프로토콜 자동 인식, 산업용 IoT 프로토콜 지원을 갖춘 멀티 프로토콜 네트워크 디버깅 도구.',
     download: '무료 다운로드',
     learn: '자세히 보기',
     note: 'macOS 14+ 필요 · 완전 무료',
@@ -219,8 +240,14 @@ const ko: typeof en = {
       desc: 'Parse, Filter, Compute, Compose, Algorithm, Mapping, Script의 7가지 핸들러를 갖춘 비주얼 메시지 파서. hex/JSON/XML/문자열에서 값을 추출하고, 조건으로 필터링하며, JavaScript 표현식으로 계산하고, 구조화된 출력으로 변환합니다. 단계별 디버그 로그와 중간 데이터 스냅샷을 제공합니다.',
       tags: ['7가지 핸들러', 'JavaScript 스크립팅', 'Hex / JSON / XML / 문자열', '단계별 디버깅'],
     },
+    workflow: {
+      title: '다단계 통신 워크플로',
+      subtitle: '실제 세션에서 전송, 대기, 매칭, 후속 메시지를 자동화',
+      desc: '실제 연결에서 실행되는 재사용 가능한 메시지 워크플로를 만듭니다. 요청을 연결하고, 지연하거나 응답을 기다리며, 구조화된 조건을 매칭하고, 이전 단계의 데이터를 이후 메시지에 전달할 수 있습니다. 전송 전과 수신 후에 파서를 연결하고 모든 단계의 전체 실행 로그를 기록합니다.',
+      tags: ['순차 메시지', '응답 매칭', '파서 연결', '실행 로그'],
+    },
     analyzer: {
-      title: '프로토콜 분석기',
+      title: '프로토콜 자동 인식',
       subtitle: 'MODBUS RTU/TCP 및 DL/T 645 프레임 자동 감지 및 분석',
       desc: '원시 hex를 입력하면 구조화된 필드 분석을 얻을 수 있습니다: 슬레이브 주소, 기능 코드, 레지스터 값, CRC-16 검증. 부호 있는/없는 정수, BCD, IEEE 754 부동소수점 해석을 지원합니다. 읽기/쓰기 작업을 위한 MODBUS 프레임 구성 기능 내장.',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', '필드 분석', '프레임 구성'],
@@ -246,19 +273,20 @@ const ko: typeof en = {
   },
   painMatrix: {
     heading: '문제점 및 해결책',
-    title: '6가지 문제점',
+    title: '7가지 문제점',
     titleHighlight: '하나의 해결책',
     solution: 'CommuKit',
     items: [
       { pain: '도구 파편화', painDesc: 'TCP 클라이언트, MQTT 클라이언트, WebSocket 클라이언트, Hex 파서, 체크섬 계산기, Ping 도구 — 각각이 별도의 앱이나 명령줄 도구.', solution: '올인원 워크벤치', solnDesc: '하나의 앱에서 모든 프로토콜과 도구를 사용. 워크스페이스를 떠나지 않고 TCP, MQTT, WebSocket, 7가지 네트워크 유틸리티 간 전환.' },
       { pain: '수동 Hex 파싱', painDesc: '산업용 장치의 원시 hex 응답은 매번 수동으로 바이트 계산, 오프셋 계산, 값 변환이 필요.', solution: '비주얼 파이프라인 편집기', solnDesc: '파싱 규칙을 한 번 정의하면 파이프라인이 자동으로 값을 추출, 변환, 매핑. 단계별 데이터 스냅샷으로 디버깅.' },
-      { pain: '프로토콜 인식 부족', painDesc: '범용 hex 도구는 MODBUS나 DL/T 645 프레임을 이해하지 못해 수동으로 기능 코드를 해독하고 CRC를 계산해야 함.', solution: '내장 프로토콜 분석기', solnDesc: '프로토콜 유형 자동 감지. 값 해석이 포함된 구조화된 필드 분석. 읽기/쓰기 명령용 MODBUS 프레임 구성 내장.' },
+      { pain: '반복되는 다단계 통신', painDesc: '다단계 장치 테스트에서는 요청 전송, 응답 대기, 필드 확인, 다음 메시지로 값 복사를 계속 수동으로 반복해야 합니다.', solution: '자동화된 통신 워크플로', solnDesc: '전송, 대기, 매칭 규칙을 한 번 정의합니다. 이전 단계 데이터를 이후 메시지에서 재사용하고 송수신 전후에 파서를 연결하며 전체 실행 로그를 남길 수 있습니다.' },
+      { pain: '프로토콜 인식 부족', painDesc: '범용 hex 도구는 MODBUS나 DL/T 645 프레임을 이해하지 못해 수동으로 기능 코드를 해독하고 CRC를 계산해야 함.', solution: '프로토콜 자동 인식', solnDesc: '프로토콜 유형 자동 감지. 값 해석이 포함된 구조화된 필드 분석. 읽기/쓰기 명령용 MODBUS 프레임 구성 내장.' },
       { pain: '산재된 유틸리티', painDesc: 'Ping, 포트 스캔, DNS 조회, SSL 확인 — 각각 터미널이나 다른 웹사이트가 필요. 지속적인 컨텍스트 전환 발생.', solution: '통합 도구 모음', solnDesc: '사이드바에 7가지 네트워크 도구 통합. 드래그 앤 드롭으로 재정렬. 연결 작업 중에도 결과가 계속 표시됨.' },
       { pain: '연결 상태 손실', painDesc: '탭을 닫으면 세션이 손실됨. 앱을 재시작하면 모든 연결 설정을 처음부터 다시 구성해야 함. 세션 간 지속성 없음.', solution: '완전한 워크스페이스 지속성', solnDesc: '그룹, 연결, 세션, 즐겨찾기, 파이프라인 설정이 모두 지속됨. 매시간/매일/매주 스마트 백업 유지.' },
       { pain: '인코딩 문제', painDesc: '산업용 장치는 GB2312, Shift-JIS, Big5를 사용하지만 대부분의 도구는 UTF-8만 지원하여 비ASCII 페이로드가 깨져 보임.', solution: '8가지 인코딩 지원', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. 연결별로 인코딩 전환. 의도한 문자 세트로 바이트를 표시.' },
     ],
   },
-  cta: { title: 'CommuKit으로 구축 시작하기', desc: '무료. 광고 없음. Apple 네이티브 경험. macOS 14+ 필요.', download: 'macOS용 다운로드' },
+  cta: { title: 'CommuKit으로 구축 시작하기', desc: '연결, 파싱, 다단계 통신 워크플로 자동화를 하나의 Apple 네이티브 워크벤치에서. 무료, 광고 없음. macOS 14+ 필요.', download: 'macOS용 다운로드' },
   footer: { changelog: '변경 로그', download: '다운로드' },
 }
 
@@ -267,7 +295,7 @@ const de: typeof en = {
   hero: {
     badge: 'Verbinden · Parsen · Transformieren',
     title1: 'Netzwerk-Kommunikations-Workbench für Entwickler',
-    subtitle: 'Ein Multi-Protokoll-Netzwerk-Debugging-Tool mit programmierbarer Nachrichten-Pipeline, Protokollanalysator und industrieller IoT-Protokollunterstützung.',
+    subtitle: 'Ein Multi-Protokoll-Netzwerk-Debugging-Tool mit programmierbarem Nachrichten-Parser, Kommunikations-Workflows, automatischer Protokollerkennung und industrieller IoT-Unterstützung.',
     download: 'Kostenloser Download',
     learn: 'Mehr erfahren',
     note: 'Erfordert macOS 14+ · Kostenlos',
@@ -285,8 +313,14 @@ const de: typeof en = {
       desc: 'Ein visueller Nachrichten-Parser mit Parse-, Filter-, Compute-, Compose-, Algorithm-, Mapping- und Script-Handlern. Extrahieren Sie Werte aus Hex/JSON/XML/Zeichenketten, filtern Sie nach Bedingungen, berechnen Sie mit JavaScript-Ausdrücken und transformieren Sie in strukturierte Ausgabe — alles mit schrittweisen Debug-Logs und Zwischen-Datenschnappschüssen.',
       tags: ['7 Handler-Typen', 'JavaScript-Scripting', 'Hex / JSON / XML / String', 'Schritt-Debugging'],
     },
+    workflow: {
+      title: 'Mehrstufige Kommunikations-Workflows',
+      subtitle: 'Senden, Warten, Abgleichen und Folgemeldungen in Live-Sitzungen automatisieren',
+      desc: 'Erstellen Sie wiederverwendbare Nachrichten-Workflows für reale Verbindungen. Verketten Sie Anfragen, verzögern Sie Schritte oder warten Sie auf Antworten, gleichen Sie strukturierte Bedingungen ab und übernehmen Sie Daten früherer Schritte in spätere Nachrichten. Parser lassen sich vor dem Senden und nach dem Empfang verketten; vollständige Laufprotokolle dokumentieren jeden Schritt.',
+      tags: ['Nachrichtenfolgen', 'Antwortabgleich', 'Parser-Verkettung', 'Laufprotokolle'],
+    },
     analyzer: {
-      title: 'Protokollanalysator',
+      title: 'Automatische Protokollerkennung',
       subtitle: 'Automatische Erkennung und Analyse von MODBUS RTU/TCP und DL/T 645 Frames',
       desc: 'Geben Sie rohes Hex ein und erhalten Sie strukturierte Feldanalysen: Slave-Adresse, Funktionscode, Registerwerte, CRC-16-Überprüfung. Unterstützt vorzeichenbehaftete/vorzeichenlose Ganzzahlen, BCD und IEEE 754 Float-Interpretationen. Integrierte MODBUS-Frame-Konstruktion für Lese-/Schreiboperationen.',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Feldanalyse', 'Frame-Konstruktion'],
@@ -312,19 +346,20 @@ const de: typeof en = {
   },
   painMatrix: {
     heading: 'Probleme & Lösungen',
-    title: '6 Probleme',
+    title: '7 Probleme',
     titleHighlight: 'Eine Lösung',
     solution: 'CommuKit',
     items: [
       { pain: 'Tool-Fragmentierung', painDesc: 'TCP-Client, MQTT-Client, WebSocket-Client, Hex-Parser, Prüfsummenrechner, Ping-Tool — jedes eine separate App oder ein Kommandozeilen-Tool.', solution: 'All-in-One-Workbench', solnDesc: 'Eine App für alle Protokolle und Tools. Wechseln Sie zwischen TCP, MQTT, WebSocket und 7 Netzwerk-Dienstprogrammen, ohne den Arbeitsbereich zu verlassen.' },
       { pain: 'Manuelles Hex-Parsen', painDesc: 'Rohe Hex-Antworten von Industrie-Geräten erfordern jedes Mal manuelles Byte-Zählen, Offset-Berechnung und Wert-Konvertierung.', solution: 'Visueller Pipeline-Editor', solnDesc: 'Einmal Parsing-Regeln definieren. Die Pipeline extrahiert, transformiert und mappt Werte automatisch. Debuggen mit schrittweisen Datenschnappschüssen.' },
-      { pain: 'Keine Protokoll-Erkennung', painDesc: 'Generische Hex-Tools verstehen keine MODBUS- oder DL/T 645-Frames. Man muss Funktionscodes manuell dekodieren und CRCs berechnen.', solution: 'Integrierter Protokollanalysator', solnDesc: 'Automatische Protokollerkennung. Strukturierte Feldanalyse mit Wertinterpretation. Integrierte MODBUS-Frame-Konstruktion für Lese-/Schreibbefehle.' },
+      { pain: 'Wiederkehrende Nachrichtenfolgen', painDesc: 'Mehrstufige Gerätetests erfordern wiederholtes Senden, Warten auf Antworten, Prüfen von Feldern und manuelles Übertragen von Werten in die nächste Nachricht.', solution: 'Automatisierte Kommunikations-Workflows', solnDesc: 'Definieren Sie Sende-, Warte- und Abgleichregeln einmalig. Nutzen Sie Daten früherer Schritte weiter, verketten Sie Parser vor und nach der Übertragung und behalten Sie ein vollständiges Laufprotokoll.' },
+      { pain: 'Keine Protokoll-Erkennung', painDesc: 'Generische Hex-Tools verstehen keine MODBUS- oder DL/T 645-Frames. Man muss Funktionscodes manuell dekodieren und CRCs berechnen.', solution: 'Automatische Protokollerkennung', solnDesc: 'Automatische Protokollerkennung. Strukturierte Feldanalyse mit Wertinterpretation. Integrierte MODBUS-Frame-Konstruktion für Lese-/Schreibbefehle.' },
       { pain: 'Verstreute Dienstprogramme', painDesc: 'Ping, Port-Scan, DNS-Abfrage, SSL-Prüfung — jedes erfordert ein Terminal-Fenster oder eine andere Website. Ständiger Kontextwechsel.', solution: 'Integrierte Tool-Suite', solnDesc: '7 Netzwerk-Tools in der Seitenleiste. Neuordnung per Drag-and-Drop. Ergebnisse bleiben sichtbar, während Sie an Verbindungen arbeiten.' },
       { pain: 'Verlorener Verbindungszustand', painDesc: 'Tab schließen und die Sitzung ist weg. App neustarten und jede Verbindung von Grund auf neu konfigurieren. Keine Persistenz über Sitzungen hinweg.', solution: 'Vollständige Arbeitsbereich-Persistenz', solnDesc: 'Gruppen, Verbindungen, Sitzungen, Favoriten und Pipeline-Konfigurationen bleiben alle erhalten. Intelligente Sicherung mit stündlicher/täglicher/wöchentlicher Aufbewahrung.' },
       { pain: 'Encoding-Probleme', painDesc: 'Industriegeräte verwenden GB2312, Shift-JIS, Big5 — die meisten Tools unterstützen nur UTF-8, wodurch Nicht-ASCII-Nutzdaten unlesbar werden.', solution: '8 Encoding-Unterstützung', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Encoding pro Verbindung umschalten. Die Bytes so sehen, wie sie gemeint sind.' },
     ],
   },
-  cta: { title: 'Starten Sie mit CommuKit', desc: 'Kostenlos. Keine Werbung. Native Apple-Erfahrung. Erfordert macOS 14+.', download: 'Für macOS herunterladen' },
+  cta: { title: 'Starten Sie mit CommuKit', desc: 'Verbinden, parsen und automatisieren Sie mehrstufige Kommunikations-Workflows in einer nativen macOS-Workbench. Kostenlos, ohne Werbung. Erfordert macOS 14+.', download: 'Für macOS herunterladen' },
   footer: { changelog: 'Änderungsprotokoll', download: 'Download' },
 }
 
@@ -333,7 +368,7 @@ const fr: typeof en = {
   hero: {
     badge: 'Connecter · Parser · Transformer',
     title1: 'Workbench de communication réseau pour développeurs',
-    subtitle: 'Un outil de débogage réseau multi-protocole avec un pipeline de messages programmable, un analyseur de protocole et le support des protocoles IoT industriels.',
+    subtitle: 'Un outil de débogage réseau multi-protocole avec analyseur de messages programmable, workflows de communication, détection automatique de protocole et support IoT industriel.',
     download: 'Téléchargement gratuit',
     learn: 'En savoir plus',
     note: 'Nécessite macOS 14+ · Gratuit',
@@ -351,8 +386,14 @@ const fr: typeof en = {
       desc: 'Un analyseur visuel de messages avec les gestionnaires Parse, Filter, Compute, Compose, Algorithm, Mapping et Script. Extrayez des valeurs depuis hex/JSON/XML/chaîne, filtrez par conditions, calculez avec des expressions JavaScript et transformez en sortie structurée — le tout avec des journaux de débogage étape par étape et des instantanés de données intermédiaires.',
       tags: ['7 types de gestionnaires', 'Scripts JavaScript', 'Hex / JSON / XML / Chaîne', 'Débogage pas à pas'],
     },
+    workflow: {
+      title: 'Workflows de communication multi-étapes',
+      subtitle: 'Automatisez l’envoi, l’attente, la correspondance et les messages de suivi',
+      desc: 'Créez des workflows de messages réutilisables exécutés sur des connexions réelles. Enchaînez les requêtes, temporisez ou attendez les réponses, appliquez des conditions structurées et réutilisez les données des étapes précédentes. Chaînez des analyseurs avant l’envoi et après la réception, avec un journal complet pour chaque étape.',
+      tags: ['Messages séquentiels', 'Correspondance', 'Chaînage d’analyseurs', 'Journaux d’exécution'],
+    },
     analyzer: {
-      title: 'Analyseur de protocole',
+      title: 'Détection automatique de protocole',
       subtitle: 'Détection et analyse automatiques des trames MODBUS RTU/TCP et DL/T 645',
       desc: 'Entrez de l\'hex brut et obtenez des analyses de champs structurées : adresse esclave, code fonction, valeurs de registre, vérification CRC-16. Prend en charge les interprétations entières signées/non signées, BCD et flottantes IEEE 754. Construction de trames MODBUS intégrée pour les opérations de lecture/écriture.',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Analyse de champs', 'Construction de trames'],
@@ -378,19 +419,20 @@ const fr: typeof en = {
   },
   painMatrix: {
     heading: 'Problèmes et solutions',
-    title: '6 problèmes',
+    title: '7 problèmes',
     titleHighlight: 'Une solution',
     solution: 'CommuKit',
     items: [
       { pain: 'Fragmentation des outils', painDesc: 'Client TCP, client MQTT, client WebSocket, parseur hex, calculateur de somme de contrôle, outil ping — chacun est une application ou un outil en ligne de commande distinct.', solution: 'Workbench tout-en-un', solnDesc: 'Une seule application pour tous les protocoles et outils. Passez de TCP à MQTT, WebSocket et 7 utilitaires réseau sans quitter l\'espace de travail.' },
       { pain: 'Parsing hex manuel', painDesc: 'Les réponses hex brutes des appareils industriels nécessitent un comptage manuel des octets, un calcul de décalage et une conversion des valeurs à chaque fois.', solution: 'Éditeur de pipeline visuel', solnDesc: 'Définissez les règles de parsing une fois. Le pipeline extrait, transforme et mappe les valeurs automatiquement. Déboguez avec des instantanés de données étape par étape.' },
-      { pain: 'Pas de reconnaissance de protocole', painDesc: 'Les outils hex génériques ne comprennent pas les trames MODBUS ou DL/T 645. Il faut décoder manuellement les codes fonction et calculer les CRC.', solution: 'Analyseur de protocole intégré', solnDesc: 'Détection automatique du type de protocole. Analyse structurée des champs avec interprétation des valeurs. Construction de trames MODBUS intégrée pour les commandes lecture/écriture.' },
+      { pain: 'Séquences de messages répétitives', painDesc: 'Les tests multi-étapes imposent de répéter manuellement l’envoi, l’attente des réponses, la vérification des champs et le transfert des valeurs vers le message suivant.', solution: 'Workflows de communication automatisés', solnDesc: 'Définissez une fois les règles d’envoi, d’attente et de correspondance. Réutilisez les données des étapes précédentes, chaînez les analyseurs avant et après l’échange et conservez un journal complet.' },
+      { pain: 'Pas de reconnaissance de protocole', painDesc: 'Les outils hex génériques ne comprennent pas les trames MODBUS ou DL/T 645. Il faut décoder manuellement les codes fonction et calculer les CRC.', solution: 'Détection automatique de protocole', solnDesc: 'Détection automatique du type de protocole. Analyse structurée des champs avec interprétation des valeurs. Construction de trames MODBUS intégrée pour les commandes lecture/écriture.' },
       { pain: 'Utilitaires dispersés', painDesc: 'Ping, scan de ports, recherche DNS, vérification SSL — chacun nécessite une fenêtre de terminal ou un site web différent. Changement de contexte constant.', solution: 'Suite d\'outils intégrée', solnDesc: '7 outils réseau dans la barre latérale. Réorganisez par glisser-déposer. Les résultats restent visibles pendant que vous travaillez sur les connexions.' },
       { pain: 'Perte d\'état de connexion', painDesc: 'Fermez un onglet et perdez la session. Redémarrez l\'application et reconfigurez chaque connexion à partir de zéro. Aucune persistance entre les sessions.', solution: 'Persistance complète de l\'espace de travail', solnDesc: 'Groupes, connexions, sessions, favoris et configurations de pipeline sont tous conservés. Sauvegarde intelligente avec rétention horaire/quotidienne/hebdomadaire.' },
       { pain: 'Problèmes d\'encodage', painDesc: 'Les appareils industriels utilisent GB2312, Shift-JIS, Big5 — la plupart des outils ne prennent en charge que l\'UTF-8, rendant les données non-ASCII illisibles.', solution: 'Support de 8 encodages', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Changez d\'encodage par connexion. Voyez les octets comme prévu.' },
     ],
   },
-  cta: { title: 'Commencez à construire avec CommuKit', desc: 'Gratuit. Sans pub. Expérience Apple native. Nécessite macOS 14+.', download: 'Télécharger pour macOS' },
+  cta: { title: 'Commencez à construire avec CommuKit', desc: 'Connectez, analysez et automatisez des workflows de communication multi-étapes dans un seul environnement macOS natif. Gratuit, sans publicité. Nécessite macOS 14+.', download: 'Télécharger pour macOS' },
   footer: { changelog: 'Journal des modifications', download: 'Télécharger' },
 }
 
@@ -399,7 +441,7 @@ const es: typeof en = {
   hero: {
     badge: 'Conectar · Analizar · Transformar',
     title1: 'Workbench de comunicación de red para desarrolladores',
-    subtitle: 'Una herramienta de depuración de red multiprotocolo con un pipeline de mensajes programable, analizador de protocolos y soporte para protocolos IoT industriales.',
+    subtitle: 'Una herramienta de depuración de red multiprotocolo con parser de mensajes programable, flujos de comunicación, detección automática de protocolos y soporte IoT industrial.',
     download: 'Descarga gratuita',
     learn: 'Más información',
     note: 'Requiere macOS 14+ · Gratis',
@@ -417,8 +459,14 @@ const es: typeof en = {
       desc: 'Un parser visual de mensajes con manejadores Parse, Filter, Compute, Compose, Algorithm, Mapping y Script. Extraiga valores de hex/JSON/XML/cadena, filtre por condiciones, calcule con expresiones JavaScript y transforme en salida estructurada — todo con registros de depuración paso a paso e instantáneas de datos intermedios.',
       tags: ['7 tipos de manejadores', 'Scripting JavaScript', 'Hex / JSON / XML / Cadena', 'Depuración paso a paso'],
     },
+    workflow: {
+      title: 'Flujos de comunicación de varios pasos',
+      subtitle: 'Automatice envíos, esperas, coincidencias y mensajes de seguimiento',
+      desc: 'Cree flujos de mensajes reutilizables que se ejecutan sobre conexiones reales. Encadene solicitudes, aplique demoras o espere respuestas, evalúe condiciones estructuradas y lleve datos de pasos anteriores a mensajes posteriores. Encadene parsers antes de enviar y después de recibir, con registros completos de cada paso.',
+      tags: ['Mensajes secuenciales', 'Coincidencia de respuestas', 'Encadenado de parsers', 'Registros de ejecución'],
+    },
     analyzer: {
-      title: 'Analizador de protocolos',
+      title: 'Detección automática de protocolos',
       subtitle: 'Detección y análisis automático de tramas MODBUS RTU/TCP y DL/T 645',
       desc: 'Ingrese hex sin procesar y obtenga desgloses de campo estructurados: dirección esclavo, código de función, valores de registro, verificación CRC-16. Soporta interpretaciones de enteros con/sin signo, BCD y flotantes IEEE 754. Construcción de tramas MODBUS integrada para operaciones de lectura/escritura.',
       tags: ['MODBUS RTU/TCP', 'DL/T 645', 'Análisis de campos', 'Construcción de tramas'],
@@ -444,19 +492,20 @@ const es: typeof en = {
   },
   painMatrix: {
     heading: 'Problemas y soluciones',
-    title: '6 problemas',
+    title: '7 problemas',
     titleHighlight: 'Una solución',
     solution: 'CommuKit',
     items: [
       { pain: 'Fragmentación de herramientas', painDesc: 'Cliente TCP, cliente MQTT, cliente WebSocket, analizador hex, calculadora de checksum, herramienta ping — cada uno es una aplicación o herramienta de línea de comandos separada.', solution: 'Workbench todo en uno', solnDesc: 'Una aplicación para todos los protocolos y herramientas. Cambie entre TCP, MQTT, WebSocket y 7 utilidades de red sin salir del espacio de trabajo.' },
       { pain: 'Análisis hex manual', painDesc: 'Las respuestas hex sin procesar de dispositivos industriales requieren conteo manual de bytes, cálculo de desplazamiento y conversión de valores cada vez.', solution: 'Editor de pipeline visual', solnDesc: 'Defina reglas de análisis una vez. El pipeline extrae, transforma y mapea valores automáticamente. Depure con instantáneas de datos paso a paso.' },
-      { pain: 'Sin reconocimiento de protocolo', painDesc: 'Las herramientas hex genéricas no entienden tramas MODBUS o DL/T 645. Hay que decodificar manualmente los códigos de función y calcular los CRC.', solution: 'Analizador de protocolo integrado', solnDesc: 'Detección automática del tipo de protocolo. Análisis de campo estructurado con interpretación de valores. Construcción de tramas MODBUS integrada para comandos de lectura/escritura.' },
+      { pain: 'Secuencias de mensajes repetitivas', painDesc: 'Las pruebas de varios pasos obligan a repetir manualmente el envío, la espera de respuestas, la comprobación de campos y el traspaso de valores al siguiente mensaje.', solution: 'Flujos de comunicación automatizados', solnDesc: 'Defina una vez las reglas de envío, espera y coincidencia. Reutilice datos de pasos anteriores, encadene parsers antes y después del intercambio y conserve un registro completo de la ejecución.' },
+      { pain: 'Sin reconocimiento de protocolo', painDesc: 'Las herramientas hex genéricas no entienden tramas MODBUS o DL/T 645. Hay que decodificar manualmente los códigos de función y calcular los CRC.', solution: 'Detección automática de protocolos', solnDesc: 'Detección automática del tipo de protocolo. Análisis de campo estructurado con interpretación de valores. Construcción de tramas MODBUS integrada para comandos de lectura/escritura.' },
       { pain: 'Utilidades dispersas', painDesc: 'Ping, escaneo de puertos, búsqueda DNS, verificación SSL — cada uno requiere una ventana de terminal o un sitio web diferente. Cambio de contexto constante.', solution: 'Suite de herramientas integrada', solnDesc: '7 herramientas de red en la barra lateral. Reordene arrastrando y soltando. Los resultados permanecen visibles mientras trabaja en las conexiones.' },
       { pain: 'Pérdida del estado de conexión', painDesc: 'Cierre una pestaña y pierda la sesión. Reinicie la aplicación y reconfigure cada conexión desde cero. Sin persistencia entre sesiones.', solution: 'Persistencia completa del espacio de trabajo', solnDesc: 'Grupos, conexiones, sesiones, favoritos y configuraciones de pipeline se conservan. Copia de seguridad inteligente con retención horaria/diaria/semanal.' },
       { pain: 'Problemas de codificación', painDesc: 'Los dispositivos industriales usan GB2312, Shift-JIS, Big5 — la mayoría de las herramientas solo admiten UTF-8, haciendo que los datos no ASCII sean ilegibles.', solution: 'Soporte para 8 codificaciones', solnDesc: 'UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS. Cambie la codificación por conexión. Vea los bytes como se pretendía.' },
     ],
   },
-  cta: { title: 'Comience a construir con CommuKit', desc: 'Gratis. Sin anuncios. Experiencia nativa Apple. Requiere macOS 14+.', download: 'Descargar para macOS' },
+  cta: { title: 'Comience a construir con CommuKit', desc: 'Conecte, analice y automatice flujos de comunicación de varios pasos en un único entorno nativo para macOS. Gratis y sin anuncios. Requiere macOS 14+.', download: 'Descargar para macOS' },
   footer: { changelog: 'Registro de cambios', download: 'Descargar' },
 }
 
