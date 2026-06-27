@@ -2,7 +2,7 @@ import { type ReactNode } from 'react'
 import { type LucideIcon } from 'lucide-react'
 import { useI18n } from '../i18n/I18nContext'
 
-type FeatureKey = 'protocols' | 'pipeline' | 'workflow' | 'analyzer' | 'tools' | 'workspace' | 'utilities'
+type FeatureKey = 'protocols' | 'pipeline' | 'workflow' | 'analyzer' | 'tools' | 'workspace' | 'utilities' | 'ble'
 
 interface Props {
   id: FeatureKey

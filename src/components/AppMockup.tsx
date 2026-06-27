@@ -1,6 +1,6 @@
-import { Activity, Braces, Calculator, ChevronRight, Cpu, Globe, Hash, Monitor, Search, Server, Shield, Wifi, Workflow, Zap } from 'lucide-react'
+import { Activity, Bluetooth, Braces, Calculator, ChevronRight, Cpu, Globe, Hash, Monitor, Search, Server, Shield, Wifi, Workflow, Zap } from 'lucide-react'
 
-type Variant = 'hero' | 'protocols' | 'pipeline' | 'workflow' | 'analyzer' | 'tools' | 'workspace' | 'utilities'
+type Variant = 'hero' | 'protocols' | 'pipeline' | 'workflow' | 'analyzer' | 'tools' | 'workspace' | 'utilities' | 'ble'
 
 interface Props { variant: Variant }
 
@@ -14,6 +14,7 @@ export default function AppMockup({ variant }: Props) {
     case 'tools': return <ToolsMockup />
     case 'workspace': return <WorkspaceMockup />
     case 'utilities': return <UtilitiesMockup />
+    case 'ble': return <BleMockup />
   }
 }
 
@@ -122,6 +123,7 @@ function ProtocolsMockup() {
     { icon: Activity, label: 'UDP', active: false, color: 'text-[#6e6e73] dark:text-[#8e8e9a]' },
     { icon: Server, label: 'MQTT', active: false, color: 'text-[#6e6e73] dark:text-[#8e8e9a]' },
     { icon: Globe, label: 'WebSocket', active: false, color: 'text-[#6e6e73] dark:text-[#8e8e9a]' },
+    { icon: Zap, label: 'AMQP', active: false, color: 'text-[#6e6e73] dark:text-[#8e8e9a]' },
   ]
   return (
     <div className="rounded-xl border border-[#e5e5ea] dark:border-[#1e2230] bg-white dark:bg-[#13161f] overflow-hidden shadow-lg">
@@ -455,6 +457,60 @@ function UtilitiesMockup() {
               <div className="flex justify-between"><span className="text-[#8e8e93]">Hex → Data</span><span className="text-[#0085ff] dark:text-[#00bfff]">4 bytes</span></div>
               <div className="flex justify-between"><span className="text-[#8e8e93]">Data → Hex</span><span className="text-[#0085ff] dark:text-[#00bfff]">Upper / Lower</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function BleMockup() {
+  const devices = [
+    { name: 'Temp Sensor Pro', uuid: 'A4:C1:38:...:2F', rssi: -42, active: true },
+    { name: 'Heart Rate Band', uuid: 'B8:27:EB:...:A1', rssi: -58, active: false },
+    { name: 'Env Monitor', uuid: 'F0:12:8B:...:C7', rssi: -71, active: false },
+  ]
+  return (
+    <div className="rounded-xl border border-[#e5e5ea] dark:border-[#1e2230] bg-white dark:bg-[#13161f] overflow-hidden shadow-lg">
+      <div className="relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0085ff]/40 dark:via-[#00bfff]/40 to-transparent" />
+      </div>
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Bluetooth size={14} className="text-[#0085ff] dark:text-[#00bfff]" />
+          <span className="text-xs font-semibold text-[#1d1d1f] dark:text-[#e8e8ed]">BLE Device Scanner</span>
+          <span className="ml-auto flex items-center gap-1 text-[10px] text-[#30d158]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#30d158] animate-pulse" /> Scanning...
+          </span>
+        </div>
+        <div className="bg-[#f5f5f7] dark:bg-[#0d0f17] rounded-lg p-1 mb-3 flex items-center gap-2">
+          <Search size={12} className="text-[#aeaeb2] ml-2" />
+          <span className="text-[10px] text-[#aeaeb2]">Filter by name or UUID...</span>
+        </div>
+        <div className="space-y-1.5 mb-3">
+          {devices.map((d, i) => (
+            <div key={i} className={`flex items-center gap-3 px-3 py-2 rounded-lg border transition-all
+              ${d.active
+                ? 'border-[#0085ff]/30 dark:border-[#00bfff]/30 bg-[#0085ff]/8 dark:bg-[#00bfff]/8'
+                : 'border-[#e5e5ea] dark:border-[#1e2230]'}`}>
+              <Bluetooth size={13} className={d.active ? 'text-[#0085ff] dark:text-[#00bfff]' : 'text-[#8e8e93]'} />
+              <div className="flex-1 min-w-0">
+                <div className="text-[11px] font-medium text-[#1d1d1f] dark:text-[#e8e8ed]">{d.name}</div>
+                <div className="text-[9px] font-mono text-[#aeaeb2]">{d.uuid}</div>
+              </div>
+              <span className={`px-1.5 py-0.5 rounded text-[9px] font-mono font-semibold
+                ${d.rssi > -50 ? 'bg-[#30d158]/10 text-[#30d158]' : d.rssi > -70 ? 'bg-[#ff9f0a]/10 text-[#ff9f0a]' : 'bg-[#ff3b30]/10 text-[#ff3b30]'}`}>
+                {d.rssi} dBm
+              </span>
+              <ChevronRight size={12} className="text-[#aeaeb2]" />
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-[#30d158]/20 bg-[#30d158]/5 p-2.5">
+          <div className="text-[9px] font-semibold text-[#30d158] mb-1.5">Selected Channel</div>
+          <div className="grid grid-cols-2 gap-2 text-[9px]">
+            <div className="flex justify-between"><span className="text-[#8e8e93]">Write UUID</span><span className="font-mono text-[#0085ff] dark:text-[#00bfff]">2A19</span></div>
+            <div className="flex justify-between"><span className="text-[#8e8e93]">Notify UUID</span><span className="font-mono text-[#30d158]">2A1D</span></div>
           </div>
         </div>
       </div>

@@ -11,9 +11,9 @@ const en = {
   features: {
     protocols: {
       title: 'Multi-Protocol Connection',
-      subtitle: 'TCP, UDP, MQTT, WebSocket — all in one unified client',
-      desc: 'Connect to any endpoint with native protocol support. TCP/UDP via Network framework, MQTT with full session control (QoS, keep-alive, auto-subscribe), WebSocket with custom headers and SSL. Supports UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS encodings.',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-Encoding'],
+      subtitle: 'TCP, UDP, MQTT, WebSocket, AMQP — all in one unified client',
+      desc: 'Connect to any endpoint with native protocol support. TCP/UDP via Network framework, MQTT with full session control (QoS, keep-alive, auto-subscribe), AMQP 0-9-1 for RabbitMQ with exchange/queue/binding management, WebSocket with custom headers and SSL. Supports UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS encodings.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', 'Multi-Encoding'],
     },
     pipeline: {
       title: 'Programmable Message Parser',
@@ -51,6 +51,12 @@ const en = {
       desc: 'CRC-16, Checksum, LRC calculation. GZIP, Deflate, Zlib compression. Base64 and AES (ECB/CBC, 128/256-bit) encryption. Hex-to-data and data-to-hex conversion. Plus a dedicated message editor with monospace font accessible from any session.',
       tags: ['CRC & Checksum', 'GZIP / Deflate / Zlib', 'AES Encryption', 'Hex Conversion'],
     },
+    ble: {
+      title: 'BLE GATT Connection',
+      subtitle: 'Scan, connect, and exchange data with BLE peripherals via CoreBluetooth',
+      desc: 'Discover nearby BLE devices in real time with RSSI signal strength indicators. Auto-select or manually configure GATT characteristics for write and notify channels. Full send/receive communication for IoT sensors, wearables, and custom BLE peripherals — all within an ephemeral, in-memory session.',
+      tags: ['BLE Device Scan', 'GATT Profile', 'Auto Channel Select', 'RSSI Signal'],
+    },
   },
   painMatrix: {
     heading: 'Pain Points & Solutions',
@@ -58,7 +64,7 @@ const en = {
     titleHighlight: 'One Solution',
     solution: 'CommuKit',
     items: [
-      { pain: 'Tool Fragmentation', painDesc: 'TCP client, MQTT client, WebSocket client, hex parser, checksum calculator, ping tool — each is a separate app or command-line tool.', solution: 'All-in-One Workbench', solnDesc: 'One app for all protocols and tools. Switch between TCP, MQTT, WebSocket, and 7 network utilities without leaving the workspace.' },
+      { pain: 'Tool Fragmentation', painDesc: 'TCP client, MQTT client, AMQP client, WebSocket client, BLE scanner, hex parser, checksum calculator, ping tool — each is a separate app or command-line tool.', solution: 'All-in-One Workbench', solnDesc: 'One app for all protocols and tools. Switch between TCP, MQTT, AMQP, WebSocket, BLE, and 7 network utilities without leaving the workspace.' },
       { pain: 'Manual Hex Parsing', painDesc: 'Raw hex response from industrial devices requires manual byte counting, offset calculation, and value conversion every time.', solution: 'Visual Pipeline Editor', solnDesc: 'Define parse rules once. The pipeline extracts, transforms, and maps values automatically. Debug with step-by-step data snapshots.' },
       { pain: 'Repetitive Message Sequences', painDesc: 'Multi-step device tests mean repeatedly sending requests, waiting for replies, checking fields, and manually carrying values into the next message.', solution: 'Automated Communication Workflows', solnDesc: 'Define send, wait, and match rules once. Reuse earlier step data in later messages, chain parsers before sending and after receiving, and keep a complete run log.' },
       { pain: 'No Protocol Awareness', painDesc: 'Generic hex tools don\'t understand MODBUS or DL/T 645 frames. You have to manually decode function codes and calculate CRCs.', solution: 'Automatic Protocol Detection', solnDesc: 'Auto-detect protocol type. Structured field breakdown with value interpretation. Built-in MODBUS frame construction for read/write commands.' },
@@ -84,9 +90,9 @@ const zh: typeof en = {
   features: {
     protocols: {
       title: '多协议连接',
-      subtitle: 'TCP、UDP、MQTT、WebSocket — 一站式统一客户端',
-      desc: '通过原生协议支持连接任意终端。TCP/UDP 基于 Network 框架，MQTT 支持完整会话控制（QoS、Keep-Alive、自动订阅），WebSocket 支持自定义 Headers 与 SSL。支持 UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS 编码。',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', '多编码支持'],
+      subtitle: 'TCP、UDP、MQTT、WebSocket、AMQP — 一站式统一客户端',
+      desc: '通过原生协议支持连接任意终端。TCP/UDP 基于 Network 框架，MQTT 支持完整会话控制（QoS、Keep-Alive、自动订阅），AMQP 0-9-1 接入 RabbitMQ 并管理交换机/队列/绑定，WebSocket 支持自定义 Headers 与 SSL。支持 UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JIS 编码。',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', '多编码支持'],
     },
     pipeline: {
       title: '可编程消息解析器',
@@ -124,6 +130,12 @@ const zh: typeof en = {
       desc: 'CRC-16、Checksum、LRC 计算。GZIP、Deflate、Zlib 压缩。Base64 及 AES（ECB/CBC、128/256 位）加解密。Hex 与 Data 互转。配专属等宽字体消息编辑器，可从任意会话调起。',
       tags: ['CRC & 校验和', 'GZIP / Deflate / Zlib', 'AES 加密', '进制转换'],
     },
+    ble: {
+      title: 'BLE GATT 连接',
+      subtitle: '扫描、连接并读写 BLE 外设的 GATT 特征值',
+      desc: '实时搜索附近的 BLE 设备，RSSI 信号强度一目了然。支持自动匹配或手动配置 GATT 特征的 Write 与 Notify 通道。完整收发通信能力，适用于物联网传感器、可穿戴设备及自定义 BLE 外设调试——全部基于临时内存会话，即用即走。',
+      tags: ['BLE 设备扫描', 'GATT 特征', '自动通道匹配', 'RSSI 信号'],
+    },
   },
   painMatrix: {
     heading: '痛点与方案',
@@ -131,7 +143,7 @@ const zh: typeof en = {
     titleHighlight: '一个方案',
     solution: 'CommuKit',
     items: [
-      { pain: '工具碎片化', painDesc: 'TCP 客户端、MQTT 客户端、WebSocket 客户端、Hex 解析器、校验计算器、Ping 工具——各自独立，来回切换。', solution: '一站式工作台', solnDesc: '一个 App 覆盖所有协议与工具。在 TCP、MQTT、WebSocket 与 7 种网络工具之间无缝切换，无需离开工作区。' },
+      { pain: '工具碎片化', painDesc: 'TCP 客户端、MQTT 客户端、AMQP 客户端、WebSocket 客户端、BLE 扫描器、Hex 解析器、校验计算器、Ping 工具——各自独立，来回切换。', solution: '一站式工作台', solnDesc: '一个 App 覆盖所有协议与工具。在 TCP、MQTT、AMQP、WebSocket、BLE 与 7 种网络工具之间无缝切换，无需离开工作区。' },
       { pain: '手动 Hex 解析', painDesc: '工业设备返回的原始 hex 报文，每次都要手动数字节、算偏移、转换数值，耗时且易出错。', solution: '可视化管线编辑器', solnDesc: '一次定义解析规则，管线自动提取、转换、映射数值。逐步数据快照让调试一目了然。' },
       { pain: '重复的多步通讯', painDesc: '设备联调经常需要反复发送多条消息、等待回复、检查字段，再把上一步结果手动填入下一条消息，流程长且容易漏步。', solution: '自动化通讯工作流', solnDesc: '一次编排发送、等待与匹配规则。前序步骤数据可直接传给后续消息，发送前与接收后可串联解析器，并保留完整运行日志。' },
       { pain: '缺乏协议感知', painDesc: '通用 hex 工具不理解 MODBUS 或 DL/T 645 报文结构，只能手动解码功能码并计算 CRC。', solution: '协议自动识别', solnDesc: '自动识别协议类型。字段结构化解析并给出数值解读。内置 MODBUS 帧构造，直接生成读写命令帧。' },
@@ -157,9 +169,9 @@ const ja: typeof en = {
   features: {
     protocols: {
       title: 'マルチプロトコル接続',
-      subtitle: 'TCP、UDP、MQTT、WebSocket — すべてを1つのクライアントで',
-      desc: 'ネイティブプロトコルサポートで任意のエンドポイントに接続。NetworkフレームワークによるTCP/UDP、完全なセッション制御（QoS、キープアライブ、自動サブスクライブ）を備えたMQTT、カスタムヘッダーとSSL対応のWebSocket。UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JISエンコーディング対応。',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'マルチエンコーディング'],
+      subtitle: 'TCP、UDP、MQTT、WebSocket、AMQP — すべてを1つのクライアントで',
+      desc: 'ネイティブプロトコルサポートで任意のエンドポイントに接続。NetworkフレームワークによるTCP/UDP、完全なセッション制御（QoS、キープアライブ、自動サブスクライブ）を備えたMQTT、Exchange/キュー/バインディング管理が可能なAMQP 0-9-1（RabbitMQ対応）、カスタムヘッダーとSSL対応のWebSocket。UTF-8、ASCII、GB2312、GBK、GB18030、Big5、Shift-JISエンコーディング対応。',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', 'マルチエンコーディング'],
     },
     pipeline: {
       title: 'プログラマブルメッセージパーサー',
@@ -197,6 +209,12 @@ const ja: typeof en = {
       desc: 'CRC-16、チェックサム、LRC計算。GZIP、Deflate、Zlib圧縮。Base64およびAES（ECB/CBC、128/256ビット）暗号化。Hex-データ相互変換。さらに、任意のセッションからアクセス可能な等幅フォントの専用メッセージエディタ付き。',
       tags: ['CRC & チェックサム', 'GZIP / Deflate / Zlib', 'AES暗号化', 'Hex変換'],
     },
+    ble: {
+      title: 'BLE GATT接続',
+      subtitle: 'BLEペリフェラルをスキャンし、GATT経由でデータを送受信',
+      desc: '近くのBLEデバイスをリアルタイムで検出し、RSSI信号強度を表示。Write/NotifyチャネルのGATT特性を自動選択または手動設定。IoTセンサー、ウェアラブル、カスタムBLEペリフェラルとの完全な送受信通信——すべてメモリ内セッションで実行。',
+      tags: ['BLEデバイススキャン', 'GATTプロファイル', '自動チャネル選択', 'RSSI信号'],
+    },
   },
   painMatrix: {
     heading: '課題と解決策',
@@ -204,7 +222,7 @@ const ja: typeof en = {
     titleHighlight: '1つの解決策',
     solution: 'CommuKit',
     items: [
-      { pain: 'ツールの断片化', painDesc: 'TCPクライアント、MQTTクライアント、WebSocketクライアント、Hexパーサー、チェックサム計算機、Pingツール — それぞれが別のアプリやコマンドラインツール。', solution: 'オールインワンワークベンチ', solnDesc: '1つのアプリですべてのプロトコルとツールに対応。ワークスペースを離れることなくTCP、MQTT、WebSocket、7つのネットワークユーティリティを切り替え。' },
+      { pain: 'ツールの断片化', painDesc: 'TCPクライアント、MQTTクライアント、AMQPクライアント、WebSocketクライアント、BLEスキャナ、Hexパーサー、チェックサム計算機、Pingツール — それぞれが別のアプリやコマンドラインツール。', solution: 'オールインワンワークベンチ', solnDesc: '1つのアプリですべてのプロトコルとツールに対応。ワークスペースを離れることなくTCP、MQTT、AMQP、WebSocket、BLE、7つのネットワークユーティリティを切り替え。' },
       { pain: '手動Hex解析', painDesc: '産業用デバイスからの生のhex応答は、毎回手動でバイトカウント、オフセット計算、値変換が必要。', solution: 'ビジュアルパイプラインエディタ', solnDesc: '解析ルールを一度定義すれば、パイプラインが自動的に値を抽出・変換・マッピング。ステップバイステップのデータスナップショットでデバッグ。' },
       { pain: '繰り返しの多段通信', painDesc: '複数ステップのデバイステストでは、要求の送信、返信待ち、フィールド確認、次のメッセージへの値の転記を毎回手作業で繰り返します。', solution: '通信ワークフローの自動化', solnDesc: '送信、待機、照合ルールを一度定義。前のステップのデータを後続メッセージで再利用し、送受信前後にパーサーを連結して、完全な実行ログを残せます。' },
       { pain: 'プロトコル非対応', painDesc: '汎用hexツールはMODBUSやDL/T 645フレームを理解せず、手動でファンクションコードを解読しCRCを計算する必要がある。', solution: 'プロトコル自動識別', solnDesc: 'プロトコルタイプを自動検出。値解釈付きの構造化フィールド解析。読み取り/書き込みコマンド用のMODBUSフレーム構築機能内蔵。' },
@@ -230,9 +248,9 @@ const ko: typeof en = {
   features: {
     protocols: {
       title: '멀티 프로토콜 연결',
-      subtitle: 'TCP, UDP, MQTT, WebSocket — 하나의 통합 클라이언트에서',
-      desc: '네이티브 프로토콜 지원으로 모든 엔드포인트에 연결. Network 프레임워크 기반 TCP/UDP, 전체 세션 제어(QoS, Keep-Alive, 자동 구독)가 가능한 MQTT, 사용자 정의 헤더와 SSL을 지원하는 WebSocket. UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS 인코딩 지원.',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', '멀티 인코딩'],
+      subtitle: 'TCP, UDP, MQTT, WebSocket, AMQP — 하나의 통합 클라이언트에서',
+      desc: '네이티브 프로토콜 지원으로 모든 엔드포인트에 연결. Network 프레임워크 기반 TCP/UDP, 전체 세션 제어(QoS, Keep-Alive, 자동 구독)가 가능한 MQTT, Exchange/큐/바인딩 관리가 가능한 AMQP 0-9-1(RabbitMQ), 사용자 정의 헤더와 SSL을 지원하는 WebSocket. UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS 인코딩 지원.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', '멀티 인코딩'],
     },
     pipeline: {
       title: '프로그래머블 메시지 파서',
@@ -270,6 +288,12 @@ const ko: typeof en = {
       desc: 'CRC-16, 체크섬, LRC 계산. GZIP, Deflate, Zlib 압축. Base64 및 AES(ECB/CBC, 128/256비트) 암호화. Hex-데이터 상호 변환. 모든 세션에서 접근 가능한 고정폭 글꼴 전용 메시지 편집기 제공.',
       tags: ['CRC & 체크섬', 'GZIP / Deflate / Zlib', 'AES 암호화', 'Hex 변환'],
     },
+    ble: {
+      title: 'BLE GATT 연결',
+      subtitle: 'BLE 주변기기를 스캔하고 GATT로 데이터 교환',
+      desc: '주변 BLE 기기를 실시간으로 검색하고 RSSI 신호 강도를 확인하세요. Write/Notify 채널의 GATT 특성을 자동 선택 또는 수동 구성할 수 있습니다. IoT 센서, 웨어러블, 커스텀 BLE 주변기기와의 완전한 송수신 통신——모두 메모리 내 세션에서 실행됩니다.',
+      tags: ['BLE 기기 스캔', 'GATT 프로파일', '자동 채널 선택', 'RSSI 신호'],
+    },
   },
   painMatrix: {
     heading: '문제점 및 해결책',
@@ -277,7 +301,7 @@ const ko: typeof en = {
     titleHighlight: '하나의 해결책',
     solution: 'CommuKit',
     items: [
-      { pain: '도구 파편화', painDesc: 'TCP 클라이언트, MQTT 클라이언트, WebSocket 클라이언트, Hex 파서, 체크섬 계산기, Ping 도구 — 각각이 별도의 앱이나 명령줄 도구.', solution: '올인원 워크벤치', solnDesc: '하나의 앱에서 모든 프로토콜과 도구를 사용. 워크스페이스를 떠나지 않고 TCP, MQTT, WebSocket, 7가지 네트워크 유틸리티 간 전환.' },
+      { pain: '도구 파편화', painDesc: 'TCP 클라이언트, MQTT 클라이언트, AMQP 클라이언트, WebSocket 클라이언트, BLE 스캐너, Hex 파서, 체크섬 계산기, Ping 도구 — 각각이 별도의 앱이나 명령줄 도구.', solution: '올인원 워크벤치', solnDesc: '하나의 앱에서 모든 프로토콜과 도구를 사용. 워크스페이스를 떠나지 않고 TCP, MQTT, AMQP, WebSocket, BLE, 7가지 네트워크 유틸리티 간 전환.' },
       { pain: '수동 Hex 파싱', painDesc: '산업용 장치의 원시 hex 응답은 매번 수동으로 바이트 계산, 오프셋 계산, 값 변환이 필요.', solution: '비주얼 파이프라인 편집기', solnDesc: '파싱 규칙을 한 번 정의하면 파이프라인이 자동으로 값을 추출, 변환, 매핑. 단계별 데이터 스냅샷으로 디버깅.' },
       { pain: '반복되는 다단계 통신', painDesc: '다단계 장치 테스트에서는 요청 전송, 응답 대기, 필드 확인, 다음 메시지로 값 복사를 계속 수동으로 반복해야 합니다.', solution: '자동화된 통신 워크플로', solnDesc: '전송, 대기, 매칭 규칙을 한 번 정의합니다. 이전 단계 데이터를 이후 메시지에서 재사용하고 송수신 전후에 파서를 연결하며 전체 실행 로그를 남길 수 있습니다.' },
       { pain: '프로토콜 인식 부족', painDesc: '범용 hex 도구는 MODBUS나 DL/T 645 프레임을 이해하지 못해 수동으로 기능 코드를 해독하고 CRC를 계산해야 함.', solution: '프로토콜 자동 인식', solnDesc: '프로토콜 유형 자동 감지. 값 해석이 포함된 구조화된 필드 분석. 읽기/쓰기 명령용 MODBUS 프레임 구성 내장.' },
@@ -303,9 +327,9 @@ const de: typeof en = {
   features: {
     protocols: {
       title: 'Multi-Protokoll-Verbindung',
-      subtitle: 'TCP, UDP, MQTT, WebSocket — alles in einem einheitlichen Client',
-      desc: 'Verbinden Sie sich mit nativer Protokollunterstützung mit beliebigen Endpunkten. TCP/UDP über das Network-Framework, MQTT mit vollständiger Sitzungssteuerung (QoS, Keep-Alive, Auto-Abonnement), WebSocket mit benutzerdefinierten Headern und SSL. Unterstützt UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-Encoding'],
+      subtitle: 'TCP, UDP, MQTT, WebSocket, AMQP — alles in einem einheitlichen Client',
+      desc: 'Verbinden Sie sich mit nativer Protokollunterstützung mit beliebigen Endpunkten. TCP/UDP über das Network-Framework, MQTT mit vollständiger Sitzungssteuerung (QoS, Keep-Alive, Auto-Abonnement), AMQP 0-9-1 für RabbitMQ mit Exchange/Queue/Binding-Verwaltung, WebSocket mit benutzerdefinierten Headern und SSL. Unterstützt UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', 'Multi-Encoding'],
     },
     pipeline: {
       title: 'Programmierbarer Nachrichten-Parser',
@@ -343,6 +367,12 @@ const de: typeof en = {
       desc: 'CRC-16, Prüfsumme, LRC-Berechnung. GZIP-, Deflate-, Zlib-Kompression. Base64- und AES-Verschlüsselung (ECB/CBC, 128/256-Bit). Hex-zu-Daten- und Daten-zu-Hex-Konvertierung. Plus ein dedizierter Nachrichten-Editor mit Monospace-Schriftart, zugänglich von jeder Sitzung aus.',
       tags: ['CRC & Prüfsumme', 'GZIP / Deflate / Zlib', 'AES-Verschlüsselung', 'Hex-Konvertierung'],
     },
+    ble: {
+      title: 'BLE GATT-Verbindung',
+      subtitle: 'Scannen, verbinden und Daten mit BLE-Peripheriegeräten über GATT austauschen',
+      desc: 'Entdecken Sie BLE-Geräte in Echtzeit mit RSSI-Signalstärkeanzeige. Automatische oder manuelle Konfiguration der GATT-Charakteristiken für Write- und Notify-Kanäle. Vollständige Sende-/Empfangskommunikation für IoT-Sensoren, Wearables und benutzerdefinierte BLE-Peripheriegeräte — alles in einer temporären In-Memory-Sitzung.',
+      tags: ['BLE-Gerätesuche', 'GATT-Profil', 'Automatische Kanalwahl', 'RSSI-Signal'],
+    },
   },
   painMatrix: {
     heading: 'Probleme & Lösungen',
@@ -350,7 +380,7 @@ const de: typeof en = {
     titleHighlight: 'Eine Lösung',
     solution: 'CommuKit',
     items: [
-      { pain: 'Tool-Fragmentierung', painDesc: 'TCP-Client, MQTT-Client, WebSocket-Client, Hex-Parser, Prüfsummenrechner, Ping-Tool — jedes eine separate App oder ein Kommandozeilen-Tool.', solution: 'All-in-One-Workbench', solnDesc: 'Eine App für alle Protokolle und Tools. Wechseln Sie zwischen TCP, MQTT, WebSocket und 7 Netzwerk-Dienstprogrammen, ohne den Arbeitsbereich zu verlassen.' },
+      { pain: 'Tool-Fragmentierung', painDesc: 'TCP-Client, MQTT-Client, AMQP-Client, WebSocket-Client, BLE-Scanner, Hex-Parser, Prüfsummenrechner, Ping-Tool — jedes eine separate App oder ein Kommandozeilen-Tool.', solution: 'All-in-One-Workbench', solnDesc: 'Eine App für alle Protokolle und Tools. Wechseln Sie zwischen TCP, MQTT, AMQP, WebSocket, BLE und 7 Netzwerk-Dienstprogrammen, ohne den Arbeitsbereich zu verlassen.' },
       { pain: 'Manuelles Hex-Parsen', painDesc: 'Rohe Hex-Antworten von Industrie-Geräten erfordern jedes Mal manuelles Byte-Zählen, Offset-Berechnung und Wert-Konvertierung.', solution: 'Visueller Pipeline-Editor', solnDesc: 'Einmal Parsing-Regeln definieren. Die Pipeline extrahiert, transformiert und mappt Werte automatisch. Debuggen mit schrittweisen Datenschnappschüssen.' },
       { pain: 'Wiederkehrende Nachrichtenfolgen', painDesc: 'Mehrstufige Gerätetests erfordern wiederholtes Senden, Warten auf Antworten, Prüfen von Feldern und manuelles Übertragen von Werten in die nächste Nachricht.', solution: 'Automatisierte Kommunikations-Workflows', solnDesc: 'Definieren Sie Sende-, Warte- und Abgleichregeln einmalig. Nutzen Sie Daten früherer Schritte weiter, verketten Sie Parser vor und nach der Übertragung und behalten Sie ein vollständiges Laufprotokoll.' },
       { pain: 'Keine Protokoll-Erkennung', painDesc: 'Generische Hex-Tools verstehen keine MODBUS- oder DL/T 645-Frames. Man muss Funktionscodes manuell dekodieren und CRCs berechnen.', solution: 'Automatische Protokollerkennung', solnDesc: 'Automatische Protokollerkennung. Strukturierte Feldanalyse mit Wertinterpretation. Integrierte MODBUS-Frame-Konstruktion für Lese-/Schreibbefehle.' },
@@ -376,9 +406,9 @@ const fr: typeof en = {
   features: {
     protocols: {
       title: 'Connexion multi-protocole',
-      subtitle: 'TCP, UDP, MQTT, WebSocket — tout dans un client unifié',
-      desc: 'Connectez-vous à n\'importe quel point de terminaison avec un support de protocole natif. TCP/UDP via le framework Network, MQTT avec contrôle de session complet (QoS, keep-alive, abonnement automatique), WebSocket avec en-têtes personnalisés et SSL. Prend en charge les encodages UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-encodage'],
+      subtitle: 'TCP, UDP, MQTT, WebSocket, AMQP — tout dans un client unifié',
+      desc: 'Connectez-vous à n\'importe quel point de terminaison avec un support de protocole natif. TCP/UDP via le framework Network, MQTT avec contrôle de session complet (QoS, keep-alive, abonnement automatique), AMQP 0-9-1 pour RabbitMQ avec gestion exchange/queue/binding, WebSocket avec en-têtes personnalisés et SSL. Prend en charge les encodages UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', 'Multi-encodage'],
     },
     pipeline: {
       title: 'Analyseur de messages programmable',
@@ -416,6 +446,12 @@ const fr: typeof en = {
       desc: 'Calcul CRC-16, Checksum, LRC. Compression GZIP, Deflate, Zlib. Chiffrement Base64 et AES (ECB/CBC, 128/256 bits). Conversion hex vers données et données vers hex. Plus un éditeur de messages dédié avec police monospace accessible depuis n\'importe quelle session.',
       tags: ['CRC & Checksum', 'GZIP / Deflate / Zlib', 'Chiffrement AES', 'Conversion Hex'],
     },
+    ble: {
+      title: 'Connexion BLE GATT',
+      subtitle: 'Scannez, connectez et échangez des données avec des périphériques BLE via GATT',
+      desc: 'Découvrez les appareils BLE à proximité en temps réel avec indicateurs de force du signal RSSI. Sélection automatique ou configuration manuelle des caractéristiques GATT pour les canaux Write et Notify. Communication complète envoi/réception pour capteurs IoT, wearables et périphériques BLE personnalisés — le tout dans une session temporaire en mémoire.',
+      tags: ['Scan BLE', 'Profil GATT', 'Sélection auto des canaux', 'Signal RSSI'],
+    },
   },
   painMatrix: {
     heading: 'Problèmes et solutions',
@@ -423,7 +459,7 @@ const fr: typeof en = {
     titleHighlight: 'Une solution',
     solution: 'CommuKit',
     items: [
-      { pain: 'Fragmentation des outils', painDesc: 'Client TCP, client MQTT, client WebSocket, parseur hex, calculateur de somme de contrôle, outil ping — chacun est une application ou un outil en ligne de commande distinct.', solution: 'Workbench tout-en-un', solnDesc: 'Une seule application pour tous les protocoles et outils. Passez de TCP à MQTT, WebSocket et 7 utilitaires réseau sans quitter l\'espace de travail.' },
+      { pain: 'Fragmentation des outils', painDesc: 'Client TCP, client MQTT, client AMQP, client WebSocket, scanner BLE, parseur hex, calculateur de somme de contrôle, outil ping — chacun est une application ou un outil en ligne de commande distinct.', solution: 'Workbench tout-en-un', solnDesc: 'Une seule application pour tous les protocoles et outils. Passez de TCP à MQTT, AMQP, WebSocket, BLE et 7 utilitaires réseau sans quitter l\'espace de travail.' },
       { pain: 'Parsing hex manuel', painDesc: 'Les réponses hex brutes des appareils industriels nécessitent un comptage manuel des octets, un calcul de décalage et une conversion des valeurs à chaque fois.', solution: 'Éditeur de pipeline visuel', solnDesc: 'Définissez les règles de parsing une fois. Le pipeline extrait, transforme et mappe les valeurs automatiquement. Déboguez avec des instantanés de données étape par étape.' },
       { pain: 'Séquences de messages répétitives', painDesc: 'Les tests multi-étapes imposent de répéter manuellement l’envoi, l’attente des réponses, la vérification des champs et le transfert des valeurs vers le message suivant.', solution: 'Workflows de communication automatisés', solnDesc: 'Définissez une fois les règles d’envoi, d’attente et de correspondance. Réutilisez les données des étapes précédentes, chaînez les analyseurs avant et après l’échange et conservez un journal complet.' },
       { pain: 'Pas de reconnaissance de protocole', painDesc: 'Les outils hex génériques ne comprennent pas les trames MODBUS ou DL/T 645. Il faut décoder manuellement les codes fonction et calculer les CRC.', solution: 'Détection automatique de protocole', solnDesc: 'Détection automatique du type de protocole. Analyse structurée des champs avec interprétation des valeurs. Construction de trames MODBUS intégrée pour les commandes lecture/écriture.' },
@@ -449,9 +485,9 @@ const es: typeof en = {
   features: {
     protocols: {
       title: 'Conexión multiprotocolo',
-      subtitle: 'TCP, UDP, MQTT, WebSocket — todo en un cliente unificado',
-      desc: 'Conéctese a cualquier endpoint con soporte de protocolo nativo. TCP/UDP mediante el framework Network, MQTT con control completo de sesión (QoS, keep-alive, suscripción automática), WebSocket con cabeceras personalizadas y SSL. Soporta codificaciones UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
-      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'Multi-codificación'],
+      subtitle: 'TCP, UDP, MQTT, WebSocket, AMQP — todo en un cliente unificado',
+      desc: 'Conéctese a cualquier endpoint con soporte de protocolo nativo. TCP/UDP mediante el framework Network, MQTT con control completo de sesión (QoS, keep-alive, suscripción automática), AMQP 0-9-1 para RabbitMQ con gestión de exchange/cola/binding, WebSocket con cabeceras personalizadas y SSL. Soporta codificaciones UTF-8, ASCII, GB2312, GBK, GB18030, Big5, Shift-JIS.',
+      tags: ['TCP / UDP', 'MQTT', 'WebSocket', 'AMQP', 'Multi-codificación'],
     },
     pipeline: {
       title: 'Parser de mensajes programable',
@@ -489,6 +525,12 @@ const es: typeof en = {
       desc: 'Cálculo CRC-16, Checksum, LRC. Compresión GZIP, Deflate, Zlib. Cifrado Base64 y AES (ECB/CBC, 128/256 bits). Conversión hex a datos y datos a hex. Además, un editor de mensajes dedicado con fuente monoespaciada accesible desde cualquier sesión.',
       tags: ['CRC y Checksum', 'GZIP / Deflate / Zlib', 'Cifrado AES', 'Conversión Hex'],
     },
+    ble: {
+      title: 'Conexión BLE GATT',
+      subtitle: 'Escanea, conecta e intercambia datos con periféricos BLE a través de GATT',
+      desc: 'Descubre dispositivos BLE cercanos en tiempo real con indicadores de intensidad de señal RSSI. Selección automática o configuración manual de características GATT para canales Write y Notify. Comunicación completa de envío/recepción para sensores IoT, wearables y periféricos BLE personalizados — todo dentro de una sesión temporal en memoria.',
+      tags: ['Escaneo BLE', 'Perfil GATT', 'Selección auto de canal', 'Señal RSSI'],
+    },
   },
   painMatrix: {
     heading: 'Problemas y soluciones',
@@ -496,7 +538,7 @@ const es: typeof en = {
     titleHighlight: 'Una solución',
     solution: 'CommuKit',
     items: [
-      { pain: 'Fragmentación de herramientas', painDesc: 'Cliente TCP, cliente MQTT, cliente WebSocket, analizador hex, calculadora de checksum, herramienta ping — cada uno es una aplicación o herramienta de línea de comandos separada.', solution: 'Workbench todo en uno', solnDesc: 'Una aplicación para todos los protocolos y herramientas. Cambie entre TCP, MQTT, WebSocket y 7 utilidades de red sin salir del espacio de trabajo.' },
+      { pain: 'Fragmentación de herramientas', painDesc: 'Cliente TCP, cliente MQTT, cliente AMQP, cliente WebSocket, escáner BLE, analizador hex, calculadora de checksum, herramienta ping — cada uno es una aplicación o herramienta de línea de comandos separada.', solution: 'Workbench todo en uno', solnDesc: 'Una aplicación para todos los protocolos y herramientas. Cambie entre TCP, MQTT, AMQP, WebSocket, BLE y 7 utilidades de red sin salir del espacio de trabajo.' },
       { pain: 'Análisis hex manual', painDesc: 'Las respuestas hex sin procesar de dispositivos industriales requieren conteo manual de bytes, cálculo de desplazamiento y conversión de valores cada vez.', solution: 'Editor de pipeline visual', solnDesc: 'Defina reglas de análisis una vez. El pipeline extrae, transforma y mapea valores automáticamente. Depure con instantáneas de datos paso a paso.' },
       { pain: 'Secuencias de mensajes repetitivas', painDesc: 'Las pruebas de varios pasos obligan a repetir manualmente el envío, la espera de respuestas, la comprobación de campos y el traspaso de valores al siguiente mensaje.', solution: 'Flujos de comunicación automatizados', solnDesc: 'Defina una vez las reglas de envío, espera y coincidencia. Reutilice datos de pasos anteriores, encadene parsers antes y después del intercambio y conserve un registro completo de la ejecución.' },
       { pain: 'Sin reconocimiento de protocolo', painDesc: 'Las herramientas hex genéricas no entienden tramas MODBUS o DL/T 645. Hay que decodificar manualmente los códigos de función y calcular los CRC.', solution: 'Detección automática de protocolos', solnDesc: 'Detección automática del tipo de protocolo. Análisis de campo estructurado con interpretación de valores. Construcción de tramas MODBUS integrada para comandos de lectura/escritura.' },

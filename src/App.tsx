@@ -7,7 +7,7 @@ import PainMatrix from './components/PainMatrix'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import AppMockup from './components/AppMockup'
-import { Network, Workflow, Cpu, Wrench, Layers, Braces } from 'lucide-react'
+import { Network, Workflow, Cpu, Wrench, Layers, Braces, Bluetooth } from 'lucide-react'
 
 export default function App() {
   return (
@@ -65,6 +65,12 @@ function AppContent() {
         icon={Braces}
         mockup={<AppMockup variant="utilities" />}
         reverse={false}
+      />
+      <FeatureSection
+        id="ble"
+        icon={Bluetooth}
+        mockup={<AppMockup variant="ble" />}
+        reverse={true}
       />
       <PainMatrix />
       <CTA />
