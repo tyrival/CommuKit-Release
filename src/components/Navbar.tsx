@@ -3,8 +3,8 @@ import { Download, Sun, Moon, ChevronDown } from 'lucide-react'
 import { useI18n } from '../i18n/I18nContext'
 import { useTheme } from '../theme/ThemeContext'
 import { type Lang, LANG_LABEL } from '../i18n/translations'
-import logoDark from '../assets/logo-dark.jpg'
-import logoLight from '../assets/logo-light.jpg'
+import logoDark from '../assets/logo-dark.png'
+import logoLight from '../assets/logo-light.png'
 
 const ALL_LANGS: Lang[] = ['en', 'zh', 'ja', 'ko', 'de', 'fr', 'es']
 
