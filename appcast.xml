@@ -4,7 +4,7 @@
     <title>CommuKit</title>
     <description>Most recent changes with links to updates.</description>
     <language>zh</language>
-  <item><title>Version 1.9.7</title><sparkle:version>16</sparkle:version><sparkle:shortVersionString>1.9.7</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description>## What's New
+  <item><title>Version 1.9.8</title><sparkle:version>17</sparkle:version><sparkle:shortVersionString>1.9.8</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description>log</description><enclosure url="https://github.com/tyrival/CommuKit-Release/releases/download/v1.9.8/CommuKit.dmg" sparkle:version="17" sparkle:shortVersionString="1.9.8" length="14507465" type="application/octet-stream" sparkle:edSignature="LpCppH/OtufJCBjoOFkNUWgq+9kEfAx0vZSJKQn9PNq0Sue9RYdDDZTh+1F4Pss4F/f2kkhUfGgJJ6jrQCfpAg==" /></item><item><title>Version 1.9.7</title><sparkle:version>16</sparkle:version><sparkle:shortVersionString>1.9.7</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description>## What's New
 - Added MQTT transport and protocol options.
 
 ## Improvements
