@@ -4,7 +4,14 @@
     <title>CommuKit</title>
     <description>Most recent changes with links to updates.</description>
     <language>zh</language>
-  <item><title>Version 1.9.11</title><sparkle:version>20</sparkle:version><sparkle:shortVersionString>1.9.11</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
+  <item><title>Version 1.9.12</title><sparkle:version>21</sparkle:version><sparkle:shortVersionString>1.9.12</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
+- Added production GeoIP lookup on iOS.
+
+## Improvements
+- No notable changes.
+
+## Fixes
+- No notable changes.</description><enclosure url="https://github.com/tyrival/CommuKit-Release/releases/download/v1.9.12/CommuKit.dmg" sparkle:version="21" sparkle:shortVersionString="1.9.12" length="14755983" type="application/octet-stream" sparkle:edSignature="WaV9Zogcb4r7mg4JrQEdbS6bDGXcvniOeJnlv3KLmAbrDHD5Oj/G56Mo4XHJOw4S/3p0zgbKi3b+I5hCjsdTBQ==" /></item><item><title>Version 1.9.11</title><sparkle:version>20</sparkle:version><sparkle:shortVersionString>1.9.11</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
 - Added GeoIP lookup to show geographic location of IP addresses.
 - Added traceroute to trace network paths to destinations.
 
