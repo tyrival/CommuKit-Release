@@ -4,7 +4,15 @@
     <title>CommuKit</title>
     <description>Most recent changes with links to updates.</description>
     <language>zh</language>
-  <item><title>Version 1.11.1</title><sparkle:version>24</sparkle:version><sparkle:shortVersionString>1.11.1</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
+  <item><title>Version 1.11.2</title><sparkle:version>25</sparkle:version><sparkle:shortVersionString>1.11.2</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
+- Added support for new models in the pipeline editor.
+- Pipeline editor now supports localization.
+
+## Improvements
+- No notable changes.
+
+## Fixes
+- No notable changes.</description><enclosure url="https://github.com/tyrival/CommuKit-Release/releases/download/v1.11.2/CommuKit.dmg" sparkle:version="25" sparkle:shortVersionString="1.11.2" length="15052131" type="application/octet-stream" sparkle:edSignature="66mVKDxjb+Ig0jg5DMfy52y4N/lwk6rlLqhi25oZxISPnZZjR/8o4nkZRSwnp/wkR9edL/ZGm8aaeE0lhXicCA==" /></item><item><title>Version 1.11.1</title><sparkle:version>24</sparkle:version><sparkle:shortVersionString>1.11.1</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
 - No notable changes.
 
 ## Improvements
