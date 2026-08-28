@@ -4,7 +4,14 @@
     <title>CommuKit</title>
     <description>Most recent changes with links to updates.</description>
     <language>zh</language>
-  <item><title>Version 1.11.2</title><sparkle:version>25</sparkle:version><sparkle:shortVersionString>1.11.2</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
+  <item><title>Version 1.12.0</title><sparkle:version>26</sparkle:version><sparkle:shortVersionString>1.12.0</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
+- No notable changes.
+
+## Improvements
+- No notable changes.
+
+## Fixes
+- MQTT connections now verify TLS certificate hostnames and reject untrusted certificate authorities.</description><enclosure url="https://github.com/tyrival/CommuKit-Release/releases/download/v1.12.0/CommuKit.dmg" sparkle:version="26" sparkle:shortVersionString="1.12.0" length="15063059" type="application/octet-stream" sparkle:edSignature="23PwS4Vb+WuQrJSx7Ce+iVkxbrVJXCq1ZPex7w/6H6l/jlsh9nGuF9X+av6WqMt/O6TYmu/Aa5nW/x01s36oAA==" /></item><item><title>Version 1.11.2</title><sparkle:version>25</sparkle:version><sparkle:shortVersionString>1.11.2</sparkle:shortVersionString><sparkle:minimumSystemVersion>26.5</sparkle:minimumSystemVersion><description sparkle:format="markdown">## What's New
 - Added support for new models in the pipeline editor.
 - Pipeline editor now supports localization.
 
